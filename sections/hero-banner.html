@@ -1,6 +1,6 @@
 <!--
   templateType: section
-  label: Hero Banner – Real Solare
+  label: Hero Banner – Real Mallorca
   isAvailableForNewContent: true
   screenshotPath: ../images/section-previews/hero-banner.png
   description: "Hero de pantalla completa con imagen de fondo y columna de contenido (título, subtítulo, texto con divisor y botón CTA)."
@@ -14,14 +14,14 @@
 {% dnd_section
   background_color="#152638",
   background_image={
-    "backgroundSize": "cover",
-    "backgroundPosition": "MIDDLE_CENTER",
-    "imageUrl": get_asset_url("../images/bgk-hero-home.jpg")
+    "backgroundSize": "initial",
+    "backgroundPosition": "BOTTOM_CENTER",
+    "imageUrl": get_asset_url("../images/header-mallorca.png")
   },
   vertical_alignment="MIDDLE",
   padding={
     "default": { "top": 200, "bottom": 120 },
-    "mobile":  { "top": 170, "bottom": 60 }
+    "mobile":  { "top": 80, "bottom": 60 }
   }
 %}
 
@@ -31,6 +31,17 @@
     width=6
   %}
 
+    {# Subtítulo #}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        label="Hero – Subtítulo",
+        extra_classes="hero__subtitle-module",
+        html='<h3>Departamentos en <strong>Preventa</strong> en Huejotzingo</h3>'
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
     {# Título principal H1
        extra_classes → hook para apuntar al section y column padre con :has() #}
     {% dnd_row %}
@@ -38,7 +49,7 @@
         path="@hubspot/rich_text",
         label="Hero – Título",
         extra_classes="hero__title-module",
-        html='<h1>Las mejores casas en venta en Querétaro</h1>'
+        html='<h1>Tu Nuevo Hogar en Real Mallorca</h1>'
       %}
       {% end_dnd_module %}
     {% end_dnd_row %}
@@ -49,7 +60,7 @@
         path="@hubspot/rich_text",
         label="Hero – Subtítulo",
         extra_classes="hero__subtitle-module",
-        html='<p>Inicia tu historia en una comunidad con el respaldo de Inmobiliaria Vinte.</p>'
+        html='<h3><strong>Desde $1,100,000 MXN*</strong></h3>'
       %}
       {% end_dnd_module %}
     {% end_dnd_row %}
@@ -61,7 +72,7 @@
         path="@hubspot/rich_text",
         label="Hero – Texto con divisor",
         extra_classes="hero__divider-module",
-        html='<p>Evoluciona al espacio que tú y tu familia merecen en un desarrollo consolidado con plusvalía comprobada.</p>'
+        html='<p>La evolución de vivir bien llega a Puebla. Asegura tu patrimonio y descubre un hogar donde tu espacio se extiende a toda una comunidad diseñada para tu bienestar con el respaldo de Vinte.</p>'
       %}
       {% end_dnd_module %}
     {% end_dnd_row %}
@@ -72,7 +83,7 @@
         path="../modules/button",
         label="Hero – CTA",
         extra_classes="hero__cta-module",
-        button_text="Ver Prototipos",
+        button_text="Agenda una Cita",
         link={
           "url": {
             "href": "#prototipos",
@@ -84,13 +95,13 @@
         styles={
           "background": {
             "color": {
-              "color": "#E0001A",
+              "color": "#ffffff",
               "opacity": 100
             }
           },
           "text": {
             "font": {
-              "color": "#FFFFFF",
+              "color": "#0D55BC",
               "size": 16,
               "size_unit": "px",
               "bold": true

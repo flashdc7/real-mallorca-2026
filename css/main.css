@@ -16,6 +16,7 @@ Note: _macros.css needs to be imported into each stylesheet where macros are use
   --font-size-disclaimer:10px;
   --font-size-heading: clamp(30px, 2.5vw, 52px);
   --font-size-subheading: 40px;
+  --font-size-thirdheading: 25px;
   --letter-spacing-base: 5px;
   --font-weight-base: 400;
   --font-weight-thin: 200;
@@ -88,7 +89,7 @@ strong, b {
 .body-container--prototipos .button {
   background-color: var(--primary-color);
   border-radius: 0px;
-  color: #ffffff !important;
+  color: #ffffff;
   display: inline-block;
   font-size: var(--font-size-base);
   letter-spacing: 0.01em;
@@ -155,4 +156,8 @@ strong, b {
   display: block;
   height: auto;
   width: 100%;
+}
+
+h1, .h1{
+  font-size: var(--font-weight-heading-black);
 }

@@ -270,6 +270,29 @@
 .header__hamburger[aria-expanded="true"] .hamburger__line:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
+.hero__title-module h1,
+.hero__title-module .h1{
+  color: var(--third-color);
+  font-family: var(--font-family-base) !important;
+  line-height: 1.2em;
+  margin: 15px 0;
+}
+.hero__subtitle-module .h3, 
+.hero__subtitle-module h3 {
+    color: var(--third-color);
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-thirdheading);
+    font-weight: var(--font-weight-thin);
+    margin: 0;
+}
+.hero__subtitle-module .h3 strong, 
+.hero__subtitle-module h3 strong {
+    color: var(--third-color);
+    font-weight: var(--font-weight-heading-black);
+}
+.hero__divider-module *{
+    color: var(--third-color);
+}
 
 /* ── Responsive – Mobile (≤ 767px) ──────────────────────── */
 
