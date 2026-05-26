@@ -1,0 +1,22 @@
+<div class="nuevo-hogar" style="background-color: {{ module.design_settings.bg_color.color | default('#0D55BC') }}; color: {{ module.design_settings.text_color.color | default('#ffffff') }};">
+  <div class="nuevo-hogar__container">
+    
+    <div class="nuevo-hogar__left">
+      <h2 class="nuevo-hogar__title">{{ module.heading | default('¡Tu nuevo hogar esta esperando!') }}</h2>
+    </div>
+
+    <div class="nuevo-hogar__center">
+      <div class="nuevo-hogar__separator">
+        <img src="{{ get_asset_url('../../images/ico-medio-hogar.png') }}" alt="Separador Nuevo Hogar" class="nuevo-hogar__separator-img">
+      </div>
+    </div>
+
+    <div class="nuevo-hogar__right">
+      <div class="nuevo-hogar__count-wrapper">
+        <span class="nuevo-hogar__count">{{ module.count | default('083') }}</span>
+        <span class="nuevo-hogar__unit">{{ module.unit | default('días') }}</span>
+      </div>
+    </div>
+
+  </div>
+</div>

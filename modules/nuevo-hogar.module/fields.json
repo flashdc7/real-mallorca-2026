@@ -1,0 +1,55 @@
+[
+  {
+    "name": "heading",
+    "label": "Título",
+    "type": "text",
+    "default": "¡Tu nuevo hogar esta esperando!"
+  },
+  {
+    "name": "count",
+    "label": "Número",
+    "type": "text",
+    "default": "083"
+  },
+  {
+    "name": "unit",
+    "label": "Unidad",
+    "type": "text",
+    "default": "días"
+  },
+  {
+    "name": "icon",
+    "label": "Icono",
+    "type": "icon",
+    "default": {
+      "name": "clipboard",
+      "unicode": "f328",
+      "type": "fontawesome"
+    }
+  },
+  {
+    "name": "design_settings",
+    "label": "Ajustes de Diseño",
+    "type": "group",
+    "children": [
+      {
+        "name": "bg_color",
+        "label": "Color de fondo",
+        "type": "color",
+        "default": {
+          "color": "#0D55BC",
+          "opacity": 100
+        }
+      },
+      {
+        "name": "text_color",
+        "label": "Color de texto",
+        "type": "color",
+        "default": {
+          "color": "#ffffff",
+          "opacity": 100
+        }
+      }
+    ]
+  }
+]
