@@ -1,0 +1,124 @@
+<!--
+  templateType: section
+  label: Hero Banner – Real Solare
+  isAvailableForNewContent: true
+  screenshotPath: ../images/section-previews/hero-banner.png
+  description: "Hero de pantalla completa con imagen de fondo y columna de contenido (título, subtítulo, texto con divisor y botón CTA)."
+-->
+
+{# ── Sección hero: ocupa todo el viewport, imagen de fondo ──────
+   NOTA: dnd_section y dnd_column NO aceptan css_class.
+   Los hooks de CSS se establecen via extra_classes en dnd_module.
+   Los selectores :has() en _hero.css apuntan al section/column padre.
+#}
+{% dnd_section
+  background_color="#152638",
+  background_image={
+    "backgroundSize": "cover",
+    "backgroundPosition": "MIDDLE_CENTER",
+    "imageUrl": get_asset_url("../images/bgk-hero-home.jpg")
+  },
+  vertical_alignment="MIDDLE",
+  padding={
+    "default": { "top": 200, "bottom": 120 },
+    "mobile":  { "top": 170, "bottom": 60 }
+  }
+%}
+
+  {# Columna de contenido: máximo 6/12 cols (50%) #}
+  {% dnd_column
+    offset=0,
+    width=6
+  %}
+
+    {# Título principal H1
+       extra_classes → hook para apuntar al section y column padre con :has() #}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        label="Hero – Título",
+        extra_classes="hero__title-module",
+        html='<h1>Las mejores casas en venta en Querétaro</h1>'
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {# Subtítulo #}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        label="Hero – Subtítulo",
+        extra_classes="hero__subtitle-module",
+        html='<p>Inicia tu historia en una comunidad con el respaldo de Inmobiliaria Vinte.</p>'
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {# Divisor amarillo + texto secundario
+       La línea divisora se construye con CSS (::before en el módulo wrapper) #}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        label="Hero – Texto con divisor",
+        extra_classes="hero__divider-module",
+        html='<p>Evoluciona al espacio que tú y tu familia merecen en un desarrollo consolidado con plusvalía comprobada.</p>'
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {# Botón CTA – nativo del tema (button.module) #}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/button",
+        label="Hero – CTA",
+        extra_classes="hero__cta-module",
+        button_text="Ver Prototipos",
+        link={
+          "url": {
+            "href": "#prototipos",
+            "type": "EXTERNAL"
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        },
+        styles={
+          "background": {
+            "color": {
+              "color": "#E0001A",
+              "opacity": 100
+            }
+          },
+          "text": {
+            "font": {
+              "color": "#FFFFFF",
+              "size": 16,
+              "size_unit": "px",
+              "bold": true
+            }
+          },
+          "corner": {
+            "radius": 4
+          },
+          "spacing": {
+            "spacing": {
+              "padding": {
+                "top":    {"value": 14, "units": "px"},
+                "bottom": {"value": 14, "units": "px"},
+                "left":   {"value": 32, "units": "px"},
+                "right":  {"value": 32, "units": "px"}
+              }
+            }
+          },
+          "alignment": {
+            "alignment": {
+              "horizontal_align": "LEFT"
+            }
+          }
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+  {% end_dnd_column %}
+
+{% end_dnd_section %}

@@ -1,0 +1,158 @@
+/* Theme base styles */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Tools
+Any animations, or functions used throughout the project.
+Note: _macros.css needs to be imported into each stylesheet where macros are used and not included here
+*/
+:root {
+  --primary-color: #0D55BC;
+  --secondary-color: #000000;
+  --third-color: #ffffff;
+  --accent-color: #FFEC01;
+  --text-color: #737491;
+  --heading-color: #171717;
+  --font-family-base: 'Roboto', 'Cabin', sans-serif;
+  --font-size-base: 16px;
+  --font-size-disclaimer:10px;
+  --font-size-heading: clamp(30px, 2.5vw, 52px);
+  --font-size-subheading: 40px;
+  --letter-spacing-base: 5px;
+  --font-weight-base: 400;
+  --font-weight-thin: 200;
+  --font-weight-heading: 500;
+  --font-weight-heading-black: 700;
+}
+
+/* Generic
+This is where reset, normalize & box-sizing styles go.
+*/
+
+{% include './generic/_reset.css' %}
+{% include './generic/_normalize.css' %}
+
+/* Objects
+Non-cosmetic design patterns including grid and layout classes)
+*/
+
+{% include './objects/_layout.css' %}
+{% include './objects/_containers-dnd.css' %}
+
+/* Elements
+Base HTML elements are styled in this section (<body>, <h1>, <a>, <p>, <button> etc.)
+*/
+
+{% include './elements/_typography.css' %}
+{% include './elements/_buttons.css' %}
+{% include './elements/_forms.css' %}
+{% include './elements/_tables.css' %}
+
+/* Components
+Specific pieces of UI that are stylized. Typically used for global partial styling
+*/
+
+
+{% include './utilities/_helper.css' %}
+
+{% include './components/_header.css' %}
+{% include './components/_footer.css' %}
+{% include './components/_hero.css' %}
+{% include './components/_patrimonio.css' %}
+{% include './components/_ubicacion.css' %}
+{% include './components/_contacto.css' %}
+{% include './components/_articulos.css' %}
+{% include './components/_prototipos.css' %}
+{% include './components/_landing.css' %}
+{% include './components/_default-modules.css' %}
+
+/* Utilities
+Helper classes with ability to override anything that comes before it
+*/
+
+*,html,body {
+  font-family: "Barlow", sans-serif !important;
+}
+/* scroll-behavior: smooth → definido en generic/_reset.css (con prefers-reduced-motion) */
+p, ul, ol,li {
+    font-size: var(--font-size-base, 16px);
+    color: var(--text-color);
+}
+strong, b {
+  color: var(--heading-color);
+}
+.button, .button:hover, .button:focus, .button:active {
+    border: none !important;
+}
+
+.header__cta .button,
+.body-container--home .button,
+.body-container--prototipos .button {
+  background-color: var(--primary-color);
+  border-radius: 0px;
+  color: #ffffff !important;
+  display: inline-block;
+  font-size: var(--font-size-base);
+  letter-spacing: 0.01em;
+  padding: 15px 30px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  white-space: nowrap;
+  border: none;
+
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+}
+
+.header__cta .button:hover,
+.body-container--home .button:hover,
+.body-container--prototipos .button:hover {
+  background-color: #b5001a;
+  transform: translateY(-1px);
+  border: none;
+}
+.header__cta .button:focus,
+.body-container--home .button:focus,
+.body-container--prototipos .button:focus {
+  background-color: #b5001a;
+  transform: translateY(-1px);
+  border: none;
+}
+
+.body-container--home .button:active {
+  transform: translateY(0);
+}
+
+.body-container--prototipos .button{
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+
+.amenidades__heading-module h2{
+  color: var(--heading-color);
+  font-weight: var(--font-weight-heading);
+  line-height: 1.1;
+}
+.body-container--home .form-title,
+.body-container--home.submitted-message,
+.body-container--home form,
+.body-container--prototipos .form-title,
+.body-container--prototipos.submitted-message,
+.body-container--prototipos form,
+.body-container--landing-page .form-title,
+.body-container--landing-page.submitted-message,
+.body-container--landing-page form {
+    background-color: #ffffff;
+    border: none;
+}
+
+/* ══════════════════════════════════════════════════════════
+   BANNER RECOMIENDA Y GANA
+   ══════════════════════════════════════════════════════════ */
+
+.dnd-module:has(.recomienda__banner-module) img {
+  border-radius: 16px;
+  display: block;
+  height: auto;
+  width: 100%;
+}

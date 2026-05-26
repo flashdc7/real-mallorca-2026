@@ -1,0 +1,364 @@
+/* ============================================================
+   SITE HEADER
+   Estructura: topbar (rojo) + header__main (transparente/blur)
+   Comportamiento: fixed, sticky al hacer scroll agrega .is-scrolled
+   ============================================================ */
+
+/* ── Accesibilidad: skip link ────────────────────────────── */
+
+.header__skip {
+  height: 1px;
+  left: -9999px;
+  overflow: hidden;
+  position: absolute;
+  top: -9999px;
+  width: 1px;
+}
+
+.header__skip:focus {
+  background: #E0001A;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  height: auto;
+  left: 0;
+  overflow: visible;
+  padding: 0.5rem 1rem;
+  top: 0;
+  width: auto;
+  z-index: 9999;
+}
+
+/* ── Wrapper principal fijo ──────────────────────────────── */
+
+.site-header {
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* ── Topbar ──────────────────────────────────────────────── */
+
+.topbar {
+  background-color: var(--primary-color);
+}
+
+.topbar__container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  max-width: 1280px;
+  padding-bottom: 0.2rem;
+  padding-top: 0.2rem;
+}
+
+/* Módulo rich_text dentro del topbar */
+.topbar p,
+.topbar .hs_cos_wrapper p {
+  align-items: center;
+  color: var(--third-color);
+  display: flex;
+  font-size: 14px;
+  font-weight: 400;
+  gap: 0.4rem;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+.topbar svg {
+  flex-shrink: 0;
+}
+
+.topbar a {
+  color: #ffffff;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.topbar a:hover {
+  text-decoration: underline;
+}
+
+/* ── Header main ─────────────────────────────────────────── */
+
+.header__main {
+  background-color: rgba(21, 38, 56, 0.55);
+  background-color: #ffffff;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Estado scrolled: fondo sólido */
+.site-header.is-scrolled .header__main {
+  background-color: #152638;
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ── Contenedor principal del header ────────────────────── */
+
+.header__container {
+  align-items: center;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+  max-width: 1280px;
+  min-height: 70px;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+/* ── Logo ────────────────────────────────────────────────── */
+
+.header__logo {
+  align-items: center;
+  display: flex;
+  flex-shrink: 0;
+  max-width: 115px;
+}
+
+.header__logo img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  padding: 5px;
+}
+
+/* Texto del logo si no hay imagen */
+.header__logo .logo-company-name {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.menu .menu__link:hover, .menu .menu__link:focus, .header__language-switcher-label-current:hover, .header__language-switcher-label-current:focus, .header__language-switcher .lang_list_class li:hover a, .header__language-switcher .lang_list_class li a:focus,
+.menu .menu__link:active, .header__language-switcher-label-current:active, .header__language-switcher .lang_list_class li a:active {
+    color: #ffffff !important;
+}
+
+/* ── Navegación ──────────────────────────────────────────── */
+
+.header__nav {
+  flex: 1;
+}
+
+/* Ocultar nav mobile en desktop, mostrar desktop nav */
+.header__nav .menu--mobile {
+  display: none;
+}
+
+/* Estilos de los links del menú en el header */
+.header__nav .menu__wrapper {
+  align-items: center;
+  display: flex;
+  gap: 0;
+  justify-content: flex-end;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header__nav .menu__item {
+  position: relative;
+}
+
+.header__nav .menu__link {
+  color: var(--secondary-color);
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0px 10px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.header__nav .menu__link:hover,
+.header__nav .menu__link:focus {
+  color: var(--primary-color) !important;
+}
+
+.header__nav .menu__link--active-link {
+  color: var(--primary-color) !important;
+}
+
+/* Submenú dropdown */
+.header__nav .menu__submenu {
+  background-color: transparent !important;
+  border: none !important;
+  border-top: 2px solid #E0001A;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  left: 0;
+  list-style: none;
+  min-width: 200px;
+  opacity: 0;
+  padding: 0.5rem 0 0;
+  pointer-events: none;
+  position: absolute;
+  top: 100%;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform: translateY(-4px);
+  z-index: 100;
+}
+.menu__submenu .menu__link:hover, .menu__submenu .menu__link:focus, .header__language-switcher .lang_list_class li:hover, .menu__submenu--level-2 > .menu__item:first-child:hover:before, .menu__submenu--level-2 > .menu__item:first-child.focus:before {
+    background-color: var(--secondary-color) !important;
+}
+
+.header__nav .menu__item--has-submenu:hover > .menu__submenu,
+.header__nav .menu__item--has-submenu:focus-within > .menu__submenu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.header__nav .menu__submenu .menu__link {
+  font-size: 14px;
+  padding: 0px 9px;
+}
+
+/* ── CTA del header ──────────────────────────────────────── */
+
+.header__cta {
+  flex-shrink: 0;
+}
+
+.header__cta .button-wrapper {
+  text-align: right;
+}
+
+.header__cta .button {
+  font-weight: 700;
+}
+
+
+/* ── Hamburger (solo mobile) ─────────────────────────────── */
+
+.header__hamburger {
+  align-items: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.hamburger__line {
+  background-color: #ffffff;
+  border-radius: 2px;
+  display: block;
+  height: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  width: 24px;
+}
+
+/* Estado abierto: animación X */
+.header__hamburger[aria-expanded="true"] .hamburger__line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.header__hamburger[aria-expanded="true"] .hamburger__line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.header__hamburger[aria-expanded="true"] .hamburger__line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Responsive – Mobile (≤ 767px) ──────────────────────── */
+
+@media (max-width: 767px) {
+  .header__hamburger {
+    display: flex;
+  }
+
+  .header__cta {
+    display: none;
+  }
+
+  .header__nav {
+    background-color: #152638;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    left: 0;
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 100%; /* debajo del site-header completo (topbar + main) */
+    transition: max-height 0.35s ease;
+    width: 100%;
+  }
+
+  .header__nav.is-open {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  /* En mobile mostrar solo el nav mobile */
+  .header__nav .menu--desktop {
+    display: none;
+  }
+
+  .header__nav .menu--mobile {
+    display: block;
+  }
+
+  .header__nav .menu__wrapper {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+  }
+
+  .header__nav .menu__link {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    font-size: 14px;
+    padding: 0.75rem 1.25rem;
+  }
+
+  .header__nav .menu__submenu {
+    border-top: none;
+    box-shadow: none;
+    opacity: 1;
+    pointer-events: auto;
+    position: static;
+    transform: none;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .header__nav .menu__submenu .menu__link {
+    padding-left: 2.25rem;
+  }
+
+  .header__container {
+    min-height: 60px;
+    gap: 1rem;
+  }
+
+  .header__logo {
+    max-width: 100px;
+  }
+}
+
+/* ── Responsive – Tablet (768px – 1023px) ───────────────── */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .header__nav .menu__link {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.65rem;
+  }
+
+  .header__cta .button {
+    font-size: 0.875rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .header__logo {
+    max-width: 140px;
+  }
+}
