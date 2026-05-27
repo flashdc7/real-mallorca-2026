@@ -779,3 +779,7 @@ tfoot td {
   -moz-border-radius: 20px;
   border-radius: 20px;
 }
+.row-fluid-wrapper.row-depth-1.row-number-1{
+  background-color: #ffffff !important;
+  background-size: inherit !important;
+}
