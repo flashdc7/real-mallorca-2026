@@ -14,7 +14,7 @@ Note: _macros.css needs to be imported into each stylesheet where macros are use
   --font-family-base: 'Roboto', 'Cabin', sans-serif;
   --font-size-base: 16px;
   --font-size-disclaimer:10px;
-  --font-size-heading: clamp(30px, 2.5vw, 52px);
+  --font-size-heading: clamp(52px, 2.5vw, 52px);
   --font-size-subheading: 40px;
   --font-size-thirdheading: 25px;
   --letter-spacing-base: 5px;

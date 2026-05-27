@@ -274,6 +274,7 @@
 .hero__title-module .h1{
   color: var(--third-color);
   font-family: var(--font-family-base) !important;
+  font-size: var(--font-size-heading);
   line-height: 1.2em;
   margin: 15px 0;
 }

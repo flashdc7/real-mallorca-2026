@@ -23,6 +23,9 @@
           border-radius: {{ module.styles.corner.radius ~ "px" }};
         {% endif %}
         {{ module.styles.text.font.css }}
+        {% if module.styles.text.font.bold %}
+          font-weight: bold;
+        {% endif %}
         {{ module.styles.spacing.spacing.css }}
       }
 

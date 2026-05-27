@@ -754,3 +754,28 @@ tfoot td {
   color: {{ h3_font.color }};
   font-size: {{ h3_font.size ~ h3_font.size_unit }};
 }
+
+.amenidades__heading-module p{
+  margin: 0 0 .4rem 0;
+}
+.amenidades__icon-module{
+  margin: 20px 0 10px;
+}
+.amenidades__icon-module strong{
+  color: var(--primary-color);
+}
+.txt-azul{
+  color: var(--primary-color);
+  }
+.amenidades__label-module p{
+  width: 60%;
+  color: var(--primary-color);
+  background-color: #E7EEF9;
+  font-weight: var(--font-weight-heading-black);
+  margin: 1.3rem 0 .2rem 0;
+  padding: 10px 25px;
+
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
