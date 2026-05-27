@@ -1,0 +1,55 @@
+[
+  {
+    "name": "heading",
+    "label": "Título",
+    "type": "richtext",
+    "default": ""
+  },
+  {
+    "name": "gallery",
+    "label": "Galería de Imágenes",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 8,
+      "default": 4
+    },
+    "children": [
+      {
+        "name": "image",
+        "label": "Imagen",
+        "type": "image",
+        "default": {
+          "src": "https://f.hubspotusercontent40.net/hubfs/24104113/team-image.jpg",
+          "alt": "Amenidad"
+        }
+      }
+    ]
+  },
+  {
+    "name": "styles",
+    "label": "Estilos",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "name": "border_radius",
+        "label": "Radio de borde (px)",
+        "type": "number",
+        "default": 30
+      },
+      {
+        "name": "spacing_top",
+        "label": "Margen superior de sección (px)",
+        "type": "number",
+        "default": 80
+      },
+      {
+        "name": "spacing_bottom",
+        "label": "Margen inferior de sección (px)",
+        "type": "number",
+        "default": 80
+      }
+    ]
+  }
+]

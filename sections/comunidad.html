@@ -1,0 +1,55 @@
+<!--
+  templateType: section
+  label: Comunidad - Galería Escalonada
+  isAvailableForNewContent: true
+  description: "Sección de galería con imágenes escalonadas y título centrado."
+-->
+
+{% dnd_section
+  vertical_alignment="MIDDLE"
+%}
+  {% dnd_column
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        vertical_alignment="MIDDLE",
+       padding={
+         "default": { "top": 70, "bottom": 70 },
+         "mobile":  { "top": 60, "bottom": 60 }
+       },
+        path="../modules/comunidad-gallery",
+        label="Galería Comunidad",
+        heading= "<h2><span class='blue'>Amenidades</span> que <br/>promueven comunidad</h2>",
+        extra_classes="comunida__section-module",
+        gallery=[
+         {
+           "image": {
+             "src": get_asset_url("../images/amenidades-1.png"),
+             "alt": "Área de juegos"
+           }
+        },
+        {
+          "image": {
+            "src": get_asset_url("../images/amenidades-2.png"),
+            "alt": "Áreas de ejercicio"
+          }
+        },
+        {
+          "image": {
+            "src": get_asset_url("../images/amenidades-3.png"),
+            "alt": "Área de mascotas"
+          }
+        },
+        {
+          "image": {
+            "src": get_asset_url("../images/amenidades-4.png"),
+            "alt": "Áreas verdes"
+          }
+        }
+      ]
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

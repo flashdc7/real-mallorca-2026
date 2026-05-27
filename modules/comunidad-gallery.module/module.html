@@ -1,0 +1,22 @@
+<div class="comunidad-gallery" style="margin-top: {{ module.styles.spacing_top }}px; margin-bottom: {{ module.styles.spacing_bottom }}px;">
+  
+  <div class="comunidad-gallery__header">
+    {{ module.heading }}
+  </div>
+
+  <div class="comunidad-gallery__grid">
+    {% for item in module.gallery %}
+      {% if item.image.src %}
+        <div class="comunidad-gallery__item comunidad-gallery__item--{{ loop.index }}" style="border-radius: {{ module.styles.border_radius }}px;">
+          <img 
+            src="{{ item.image.src }}" 
+            alt="{{ item.image.alt }}" 
+            loading="lazy"
+            class="comunidad-gallery__img"
+          >
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+</div>
