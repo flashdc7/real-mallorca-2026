@@ -1,0 +1,355 @@
+/* ============================================================
+   SECCIÓN: UBICACIÓN
+   ============================================================ */
+
+.ubicacion__heading-module h2 {
+  color: var(--secondary-color);
+  font-size: var(--font-size-heading);
+  font-weight: var(--font-weight-heading-black);
+  line-height: 1.25;
+  margin: 0 0 1rem;
+}
+
+.ubicacion__intro-module p {
+  color: var(--text-color);
+  font-size: clamp(13px, 1vw, 15px);
+  margin: 0 0 1.5rem;
+}
+
+.ubicacion__bullet {
+  margin-bottom: 0.75rem;
+}
+.ubicacion__bullet .icon-rt__icon-wrap{
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+.ubicacion__bullet .icon-rt {
+  align-items: center;
+}
+
+.ubicacion__bullet .icon-rt__icon {
+  background: transparent;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.ubicacion__bullet .icon-rt__title {
+  font-size: clamp(13px, 1vw, 15px);
+  margin: 0;
+}
+
+.ubicacion__mapa-module img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.icon-rt__title.icon-rt__title-dark,
+.icon-rt__title.icon-rt__title-dark strong{
+  color: var(--heading-color-dark) !important;
+}
+
+/* ============================================================
+   Ubicación privilegiada — Mapa + Cercanías
+   Valores exactos: Figma node 5972:2
+   ============================================================ */
+
+/* ── Layout dos columnas ───────────────────────────────── */
+
+.ubicacion-content {
+  align-items: center;
+  display: flex;
+  gap: 80px;
+}
+
+/* ── Columna izquierda: mapa ───────────────────────────── */
+
+.ubicacion-content__left {
+  /* flex: 0 0 41%;
+  max-width: 41%; */
+  flex: 0 0 100%;
+  max-width: 96%;
+}
+
+/* Contenedor del zoom: overflow hidden para recortar la imagen ampliada */
+.ubicacion-mapa__zoom {
+  cursor: zoom-in;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+}
+
+/*
+  Animación fade-up usa `translate` (propiedad CSS individual).
+  Zoom usa `scale` (propiedad CSS individual).
+  Son independientes: no se pisan en los estados de transición.
+*/
+.ubicacion-mapa__img {
+  display: block;
+  height: auto;
+  opacity: 0;
+  pointer-events: none;        /* evita drag de imagen */
+  scale: 1;
+  translate: 0 40px;           /* fade-up inicial */
+  transition:
+    opacity 0.85s ease,
+    translate 0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    scale 0.45s ease;
+  width: 100%;
+  will-change: opacity, translate, scale;
+}
+
+/* Fade-up completado */
+.ubicacion-mapa__img.is-visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* Zoom: escala 2.5× al hacer hover — transform-origin cambia con el cursor (via JS) */
+.ubicacion-mapa__zoom:hover .ubicacion-mapa__img.is-visible {
+  scale: 3;
+}
+
+/* ── Columna derecha ───────────────────────────────────── */
+
+.ubicacion-content__right {
+  flex: 1;
+  min-width: 0;
+}
+
+.ubicacion-content__titulo {
+  color: var(--text-color);
+  font-size: clamp(30px, 2.9vw, 42px);
+  font-weight: var(--font-weight-base);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+.ubicacion-content__cuerpo {
+  color: var(--text-color);
+  font-size: 20px;
+  font-weight: var(--font-weight-base);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.ubicacion-content__cuerpo p {
+  margin: 0;
+}
+
+/* ── Grid cercanías (compartido con cercanias-zonas.module) */
+
+.cercanias-grid {
+  column-gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(var(--cercanias-cols, 2), 1fr);
+  margin-bottom: 2rem;
+  row-gap: 10px;
+}
+
+/* Zona card: ícono oscuro + cuerpo claro */
+.cercanias-card {
+  align-items: stretch;
+  display: flex;
+}
+
+/* Caja del ícono: 47×47 fondo #1f140f */
+.cercanias-card__icon {
+  align-items: center;
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-shrink: 0;
+  height: 47px;
+  justify-content: center;
+  width: 47px;
+}
+
+.cercanias-card__icon img {
+  display: block;
+  height: 24px;
+  object-fit: contain;
+  width: 24px;
+}
+
+/* Cuerpo: bg #f5f3ef con borde sutil */
+.cercanias-card__body {
+  align-items: center;
+  background-color: #f5f3ef;
+  border: 0.2px solid rgba(31, 20, 15, 0.3);
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  min-width: 0;
+  padding: 4px 12px;
+}
+
+.cercanias-card__info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Nombre: 15px Regular #1f140f */
+.cercanias-card__nombre {
+  color: var(--text-color);
+  display: block;
+  font-size: 15px;
+  font-weight: var(--font-weight-base);
+  line-height: 1.2;
+}
+
+/* Subtítulo: 10px Regular #1f140f */
+.cercanias-card__subtitulo {
+  color: var(--text-color);
+  display: block;
+  font-size: 10px;
+  font-weight: var(--font-weight-base);
+  line-height: 1.2;
+  margin-top: 2px;
+}
+
+/* Tiempo: número 25px #95785e + unidad 11px */
+.cercanias-card__tiempo {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+.cercanias-card__num {
+  color: #95785e;
+  display: block;
+  font-size: 25px;
+  font-weight: var(--font-weight-base);
+  line-height: 1;
+}
+
+.cercanias-card__unidad {
+  color: var(--text-color);
+  display: block;
+  font-size: 11px;
+  font-weight: var(--font-weight-base);
+  line-height: 1;
+}
+
+/* ── CTA con ícono pin ─────────────────────────────────── */
+
+.ubicacion-cta {
+  align-items: center;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  display: inline-flex;
+  font-size: 17px;
+  font-weight: var(--font-weight-heading-black);
+  gap: 10px;
+  min-width: 231px;
+  padding: 12px 20px;
+  text-decoration: none;
+  transition: background-color 0.22s;
+}
+
+.ubicacion-cta img {
+  display: block;
+  flex-shrink: 0;
+  height: 23px;
+  object-fit: contain;
+  width: 23px;
+}
+
+.ubicacion-cta:hover,
+.ubicacion-cta:focus {
+  background-color: var(--secondary-color);
+  color: #ffffff;
+  outline: none;
+  font-weight: var(--font-weight-heading-black);
+}
+
+.ubicacion__subheader-module,
+.ubicacion__subheader-module h3{
+  font-size: var(--font-size-thirdheading);
+  font-weight: var(--font-weight-thin);
+  margin: 0 0 .3rem;
+}
+.ubicacion__icon-module{
+  margin: 20px 0;
+}
+.ubicacion__icon-module .icon-rt__icon-wrap{
+  padding: 10px !important;
+}
+.ubicacion__icon-module .icon-rt__content{
+  padding-top: 8px;
+}
+
+/* ── Tablet (768px – 1023px) ───────────────────────────── */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .ubicacion-content {
+    gap: 40px;
+  }
+
+  .ubicacion-content__left {
+    flex: 0 0 46%;
+    max-width: 46%;
+  }
+
+  .ubicacion-content__titulo {
+    font-size: 28px;
+  }
+
+  .ubicacion-content__cuerpo {
+    font-size: 17px;
+  }
+
+  .cercanias-card__nombre {
+    font-size: 13px;
+  }
+
+  .cercanias-card__num {
+    font-size: 20px;
+  }
+}
+
+/* ── Móvil (≤ 767px) ───────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .ubicacion-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .ubicacion-content__left {
+    flex: none;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .ubicacion-content__titulo {
+    font-size: 26px;
+  }
+
+  .ubicacion-content__cuerpo {
+    font-size: 17px;
+  }
+
+  /* En móvil el grid pasa a 1 columna independientemente del campo cols */
+  .cercanias-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ubicacion-cta {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+
+/* ── Responsive – Mobile ─────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .ubicacion__mapa-module {
+    margin-top: 2rem;
+  }
+}

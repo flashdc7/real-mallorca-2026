@@ -1,0 +1,17 @@
+{% set map_src  = module.mapa.src if module.mapa.src else get_asset_url("../../images/ubicacion-mallorca.png") %}
+{% set cta_href = module.cta_link.url.href if module.cta_link.url.href else "#" %}
+
+<div class="ubicacion-content" data-ubicacion>
+
+  {# ── Columna izquierda: mapa con zoom lupa ── #}
+  <div class="ubicacion-content__left">
+    <div class="ubicacion-mapa__zoom">
+      <img class="ubicacion-mapa__img"
+           src="{{ map_src }}"
+           alt="{{ module.mapa.alt | default('Mapa de ubicación de Real Amalfi') | escape_attr }}"
+           loading="lazy"
+           draggable="false">
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,64 @@
+[
+  {
+    "name": "items",
+    "label": "Lista de Puntos",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 10,
+      "default": 2
+    },
+    "children": [
+      {
+        "name": "title",
+        "label": "Título del lugar",
+        "type": "text",
+        "default": "Aeropuerto Internacional de Puebla"
+      },
+      {
+        "name": "description",
+        "label": "Descripción",
+        "type": "text",
+        "default": "Conexión inmediata para tus viajes de negocios o placer."
+      },
+      {
+        "name": "time_number",
+        "label": "Número (Tiempo)",
+        "type": "text",
+        "default": "15"
+      },
+      {
+        "name": "time_unit",
+        "label": "Unidad (min, hrs, etc)",
+        "type": "text",
+        "default": "min"
+      }
+    ]
+  },
+  {
+    "name": "style",
+    "label": "Estilos",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "name": "card_bg",
+        "label": "Color de fondo de tarjeta",
+        "type": "color",
+        "default": {
+          "color": "#f8fafd",
+          "opacity": 100
+        }
+      },
+      {
+        "name": "title_color",
+        "label": "Color de título",
+        "type": "color",
+        "default": {
+          "color": "#0D55BC",
+          "opacity": 100
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,52 @@
+<!--
+  templateType: section
+  label: Puntos de Interés
+  isAvailableForNewContent: true
+  description: "Lista de puntos de interés con scroll interno para mostrar múltiples elementos."
+-->
+
+{% dnd_section
+  vertical_alignment="MIDDLE",
+  padding={
+    "default": { "top": 80, "bottom": 80 },
+    "mobile":  { "top": 40, "bottom": 40 }
+  }
+%}
+  {% dnd_column
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/puntos-interes",
+        label="Puntos de Interés",
+        items=[
+          {
+            "title": "Aeropuerto Internacional de Puebla",
+            "description": "Conexión inmediata para tus viajes de negocios o placer.",
+            "time_number": "15",
+            "time_unit": "min"
+          },
+          {
+            "title": "Cholula",
+            "description": "La riqueza cultural, gastronómica y universitaria de San Pedro Cholula.",
+            "time_number": "20",
+            "time_unit": "min"
+          },
+          {
+            "title": "Centro Comercial Angelópolis",
+            "description": "Las mejores marcas y entretenimiento a tu alcance.",
+            "time_number": "25",
+            "time_unit": "min"
+          },
+          {
+            "title": "Hospital Puebla",
+            "description": "Atención médica de primer nivel a pocos minutos.",
+            "time_number": "10",
+            "time_unit": "min"
+          }
+        ]
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

@@ -1,0 +1,20 @@
+<div class="puntos-interes">
+  <div class="puntos-interes__list">
+    {% for item in module.items %}
+      <div class="puntos-interes__card" style="background-color: {{ module.style.card_bg.color }};">
+        <div class="puntos-interes__content">
+          <h4 class="puntos-interes__title" style="color: {{ module.style.title_color.color }};">
+            {{ item.title }}
+          </h4>
+          <p class="puntos-interes__description">
+            {{ item.description }}
+          </p>
+        </div>
+        <div class="puntos-interes__time">
+          <span class="puntos-interes__number">{{ item.time_number }}</span>
+          <span class="puntos-interes__unit">{{ item.time_unit }}</span>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

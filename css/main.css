@@ -17,6 +17,7 @@ Note: _macros.css needs to be imported into each stylesheet where macros are use
   --font-size-heading: clamp(52px, 2.5vw, 52px);
   --font-size-subheading: 40px;
   --font-size-thirdheading: 25px;
+  --font-size-fourth: 18px;
   --letter-spacing-base: 5px;
   --font-weight-base: 400;
   --font-weight-thin: 200;
