@@ -781,7 +781,7 @@ tfoot td {
 }
 .row-fluid-wrapper.row-depth-1.row-number-1{
   background-color: #ffffff !important;
-  background-size: inherit !important;
+  /* background-size: contain !important; */
 }
 .azul{
   color: var(--primary-color);
@@ -795,4 +795,15 @@ tfoot td {
 }
 .icono-financiamiento__cta-module{
   margin: 50px 0 0 0;
+}
+h2{
+  font-size: var(--font-size-subheading);
+  line-height: 1.25;
+}
+
+.contacto__heading-module,
+.contacto__heading-module h2,
+.contacto__desc-module,
+.contacto__desc-module p{
+  color: var(--third-color);
 }

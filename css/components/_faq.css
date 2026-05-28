@@ -11,8 +11,9 @@
 }
 
 .faq__module-wrapper {
-  max-width: 900px;
+  /* max-width: 900px; */
   margin: 0 auto;
+  margin: 0;
 }
 
 .faq__trigger{
