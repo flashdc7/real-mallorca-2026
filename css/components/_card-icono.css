@@ -105,7 +105,8 @@
 }
 
 .card-icono-item:hover .card-icono-item__cuerpo,
-.card-icono-item:hover .card-icono-item__cuerpo p {
+.card-icono-item:hover .card-icono-item__cuerpo p,
+.card-icono-item:hover .card-icono-item__cuerpo p strong {
   color: var(--ci-c-color-h, #FFFFFF);
 }
 
