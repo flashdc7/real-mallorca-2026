@@ -163,6 +163,39 @@
   },
 
   {
+    "label": "Estilos Hover",
+    "name": "hover_styles",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "label": "Ícono — Color de fondo (Hover)",
+        "name": "icono_bg_color_hover",
+        "type": "color",
+        "default": { "color": "#ffffff", "opacity": 100 }
+      },
+      {
+        "label": "Título — Color (Hover)",
+        "name": "titulo_color_hover",
+        "type": "color",
+        "default": { "color": "#FFFFFF", "opacity": 100 }
+      },
+      {
+        "label": "Texto — Color (Hover)",
+        "name": "cuerpo_color_hover",
+        "type": "color",
+        "default": { "color": "#FFFFFF", "opacity": 100 }
+      },
+      {
+        "label": "Card — Color de fondo (Hover)",
+        "name": "card_bg_color_hover",
+        "type": "color",
+        "default": { "color": "#0D55BC", "opacity": 100 }
+      }
+    ]
+  },
+
+  {
     "label": "Items",
     "name": "items",
     "type": "group",
@@ -183,6 +216,15 @@
       {
         "label": "Ícono",
         "name": "icono",
+        "type": "image",
+        "responsive": false,
+        "resizable": false,
+        "show_loading": false,
+        "default": { "src": "", "alt": "" }
+      },
+      {
+        "label": "Ícono (Hover)",
+        "name": "icono_hover",
         "type": "image",
         "responsive": false,
         "resizable": false,

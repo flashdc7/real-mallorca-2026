@@ -24,22 +24,32 @@
 {% set ci_c_align    = module.cuerpo_alineacion | default('left') %}
 {% set ci_c_pad      = module.cuerpo_padding | default('0') %}
 
+{# Hover variables #}
+{% set ci_card_bg_h  = module.hover_styles.card_bg_color_hover.color | default('#0D55BC') %}
+{% set ci_icono_bg_h = module.hover_styles.icono_bg_color_hover.color | default('#171717') %}
+{% set ci_t_color_h  = module.hover_styles.titulo_color_hover.color | default('#FFFFFF') %}
+{% set ci_c_color_h  = module.hover_styles.cuerpo_color_hover.color | default('#FFFFFF') %}
+
 <div class="card-icono-grid ci-pos--{{ ci_icono_pos }}{% if ci_extra %} {{ ci_extra }}{% endif %}"
      style="
        --ci-cols:{{ ci_cols }};
        --ci-gap:{{ ci_gap }}px;
        --ci-card-bg:{{ ci_card_bg }};
+       --ci-card-bg-h:{{ ci_card_bg_h }};
        --ci-borde-px:{{ ci_borde_px }}px;
        --ci-borde-r:{{ ci_borde_r }}px;
        --ci-card-pad:{{ ci_padding }};
        --ci-icono-bg:{{ ci_icono_bg }};
+       --ci-icono-bg-h:{{ ci_icono_bg_h }};
        --ci-icono-a:{{ ci_icono_a }};
        --ci-icono-sz:{{ ci_icono_sz }}px;
        --ci-icono-pad:{{ ci_icono_pad }}px;
        --ci-t-size:{{ ci_t_size }}px;
        --ci-t-color:{{ ci_t_color }};
+       --ci-t-color-h:{{ ci_t_color_h }};
        --ci-c-size:{{ ci_c_size }}px;
        --ci-c-color:{{ ci_c_color }};
+       --ci-c-color-h:{{ ci_c_color_h }};
        text-align:{{ ci_align }};
      ">
 
@@ -62,7 +72,10 @@
       <div class="card-icono-item__top">
         <div class="card-icono-item__icon-box">
           {% if item.icono.src %}
-            <img src="{{ item.icono.src }}" alt="" aria-hidden="true" loading="lazy">
+            <img src="{{ item.icono.src }}" class="ci-icon-default" alt="" aria-hidden="true" loading="lazy">
+          {% endif %}
+          {% if item.icono_hover.src %}
+            <img src="{{ item.icono_hover.src }}" class="ci-icon-hover" alt="" aria-hidden="true" loading="lazy">
           {% endif %}
         </div>
         {% if item.titulo %}

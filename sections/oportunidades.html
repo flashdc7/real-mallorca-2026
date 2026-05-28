@@ -3,102 +3,124 @@
   label: Oportunidades
   isAvailableForNewContent: true
   screenshotPath: ../images/section-previews/hero-banner.png
-  description: "Tarjeta blanca que solapa la sección oscura anterior (margin-top negativo via CSS)."
+  description: "Sección de amenidades con tarjetas interactivas (hover) y diseño moderno."
 -->
 {% dnd_section
-  background_color="#F5F3EF",
+  background_color="#f6f9fe",
   padding={
-    "default": { "top": 1, "bottom": 60 },
-    "mobile":  { "top": 1, "bottom": 40 }
+    "default": { "top": 100, "bottom": 100, "left": 20, "right": 20 },
+    "mobile":  { "top": 60, "bottom": 60, "left": 15, "right": 15 }
   }
 %}
 
-  {# ── Columna izquierda: logo + texto + CTA ── #}
+  {# ── Columna izquierda: Identidad y CTA ── #}
   {% dnd_column offset=0, width=5 %}
 
     {% dnd_row %}
       {% dnd_module
-        path="@hubspot/image",
-        label="Logo Real Madeira",
-        offset=0,
-        width=12,
-        img={
-          "src": get_asset_url("../images/logo-real-madeira-cafe.png"),
-          "alt": "Real Madeira — Comunidad Vinte",
-          "loading": "lazy"
-        },
-        style_max_width={ "type": "PIXELS", "value": 130 },
-        horizontal_alignment="LEFT"
+        path="@hubspot/rich_text",
+        label="Oportunidades — Texto",
+        html="<h3 style='font-size: 36px; line-height: 1.1; color: #171717; margin: 30px 0 20px;'>Listado de <span style='color: #0D55BC;'>Amenidades</span></h3><p style='font-size: 16px; line-height: 1.6; color: #737491; margin-bottom: 40px;'>Comprar en el fraccionamiento Real Mallorca significa que tu espacio personal crece. Trae consigo una serie de amenidades que añaden valor real a tu inversión y, lo más importante, se enfocan en tu bienestar y el de tu familia.</p>"
       %}
       {% end_dnd_module %}
     {% end_dnd_row %}
 
     {% dnd_row %}
       {% dnd_module
-        path="@hubspot/rich_text",
-        label="Oportunidades — Texto",
-        offset=0,
+        path="../modules/button",
+        label="CTA Contacto",
+        button_text="Hablar con un asesor",
+        link={ "url": { "href": "#contacto", "type": "EXTERNAL" } },
+        styles={
+          "background": { "color": { "color": "#0D55BC", "opacity": 100 } },
+          "text": { "font": { "color": "#ffffff", "bold": true, "styles": { "font-weight": "bold" } } },
+          "corner": { "radius": 8 }
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/image",
         width=12,
-        html="<h3 class='oportunidades-titulo'>Queremos que la casa de tus sueños sea una realidad</h3><p class='oportunidades-cuerpo'>Explora las oportunidades que te ofrecemos para la compra de tu nueva casa en Pachuca.</p><a href='#contacto' class='oportunidades-cta'>Estamos listos para asesorarte</a>"
+        label="Logo Desarrollador",
+        img={
+          "src": get_asset_url("../images/familia-real-mallorca.png"),
+          "alt": "Real Mallorca",
+          "loading": "lazy",
+          "width": "500"
+        },
+        style_max_width={ "type": "PIXELS", "value": 560 },
+        horizontal_alignment="CENTER",
+        extra_classes="img-align-bottom"
       %}
       {% end_dnd_module %}
     {% end_dnd_row %}
 
   {% end_dnd_column %}
 
-  {# ── Columna derecha: card-icono.module (módulo reutilizable, 2x2) ── #}
+  {# ── Columna derecha: Grid Interactivo ── #}
   {% dnd_column offset=5, width=7 %}
 
     {% dnd_row %}
       {% dnd_module
         path="../modules/card-icono",
-        label="Oportunidades — Grid",
-        offset=0,
-        width=12,
-        extra_class="oportunidades-grid",
+        label="Grid de Amenidades",
         cols=2,
-        gap=30,
-        card_bg_color={ "color": "#F5F3EF", "opacity": 100 },
-        card_borde_color={ "color": "#F5F3EF", "opacity": 0 },
-        card_borde_tamano=0,
-        card_borde_radio=0,
-        card_padding="13px",
-        card_alineacion="left",
-        icono_bg_color={ "color": "#F18F04", "opacity": 100 },
-        icono_bg_alpha=100,
+        gap=25,
+        card_bg_color={ "color": "#ffffff", "opacity": 100 },
+        card_borde_radio=24,
+        card_padding="35px",
+        icono_bg_color={ "color": "#0D55BC", "opacity": 100 },
         icono_tamano=36,
-        icono_padding=16,
-        icono_posicion="inline-left",
-        titulo_size=25,
-        titulo_color={ "color": "#1F140F", "opacity": 100 },
-        titulo_alineacion="left",
-        cuerpo_size=15,
-        cuerpo_color={ "color": "#1F140F", "opacity": 100 },
-        cuerpo_alineacion="left",
+        icono_padding=14,
+        icono_posicion="top-left",
+        titulo_size=22,
+        titulo_color={ "color": "#171717", "opacity": 100 },
+        cuerpo_size=14,
+        cuerpo_color={ "color": "#737491", "opacity": 100 },
+        hover_styles_card_bg_color_hover={ "color": "#ffffff", "opacity": 100 },
+        hover_styles_icono_bg_color_hover={ "color": "#171717", "opacity": 100 },
+        hover_styles_titulo_color_hover={ "color": "#FFFFFF", "opacity": 100 },
+        hover_styles_cuerpo_color_hover={ "color": "#FFFFFF", "opacity": 100 },
+
         items=[
           {
-            "titulo": "Crédito compartido",
-            "cuerpo": "<p>Ahora con Infonavit puedes juntar tu crédito con familiares y amigos</p>",
-            "icono": { "src": get_asset_url("../images/icon-oportunidad-credito-compartido.svg"), "alt": "" },
-            "borde_color_override": { "color": "", "opacity": 100 }
+            "titulo": "Cancha de Fútbol 5",
+            "cuerpo": '<p>El lugar ideal para el "match" del fin de semana y fomentar una vida social activa sin salir de tu comunidad.</p>',
+            "icono": { "src": get_asset_url("../images/icon-cancha-blanco.svg") },
+            "icono_hover": { "src": get_asset_url("../images/icon-cancha-azul.svg") }
           },
           {
-            "titulo": "Tasas preferenciales",
-            "cuerpo": "<p>Aprovecha las mejores tasas de interés desde el 9% con créditos bancarios</p>",
-            "icono": { "src": get_asset_url("../images/icon-oportunidad-credito-compartido.svg"), "alt": "" },
-            "borde_color_override": { "color": "", "opacity": 100 }
+            "titulo": "Acceso Controlado",
+            "cuerpo": "<p>Vive con la tranquilidad que da la seguridad 24/7, protegiendo lo que más quieres: tu familia y tu patrimonio.</p>",
+            "icono": { "src": get_asset_url("../images/icon-acceso-blanco.svg") },
+            "icono_hover": { "src": get_asset_url("../images/icon-acceso-azul.svg") }
           },
           {
-            "titulo": "Apoyo Fovissste",
-            "cuerpo": "<p>Te ayudamos a tramitar tu crédito Fovissste para que adquieras tu nueva casa</p>",
-            "icono": { "src": get_asset_url("../images/icon-oportunidad-apoyo-fovissste.svg"), "alt": "" },
-            "borde_color_override": { "color": "", "opacity": 100 }
+            "titulo": "Dog Park",
+            "cuerpo": "<p>Un espacio seguro y dedicado para que tu mejor amigo también disfrute de la evolución y la salud al aire libre.</p>",
+            "icono": { "src": get_asset_url("../images/icon-dog-blanco.svg") },
+            "icono_hover": { "src": get_asset_url("../images/icon-dog-azul.svg") }
           },
           {
-            "titulo": "Compra contado",
-            "cuerpo": "<p>¿Quieres invertir con recursos propios? Te asesoramos para comprar de contado</p>",
-            "icono": { "src": get_asset_url("../images/icon-oportunidad-compra-contado.svg"), "alt": "" },
-            "borde_color_override": { "color": "", "opacity": 100 }
+            "titulo": "Área Infantil",
+            "cuerpo": "<p>El espacio ideal para que los más pequeños jueguen, se diviertan y creen momentos inolvidables con total seguridad.</p>",
+            "icono": { "src": get_asset_url("../images/icon-infantil-blanco.svg") },
+            "icono_hover": { "src": get_asset_url("../images/icon-infantil-azul.svg") }
+          },
+          {
+            "titulo": "Palapa con Asador",
+            "cuerpo": "<p>Perfecta para esas reuniones inolvidables, extendiendo tus celebraciones a un entorno diseñado para la convivencia.</p>",
+            "icono": { "src": get_asset_url("../images/icon-asador-blanco.svg") },
+            "icono_hover": { "src": get_asset_url("../images/icon-asador2-azul.svg") }
+          },
+          {
+            "titulo": "Gimnasio al aire libre",
+            "cuerpo": "<p>Perfecto para entrenar al aire libre, mantenerte activo y disfrutar una vida más saludable dentro de tu comunidad.</p>",
+            "icono": { "src": get_asset_url("../images/icon-gimnasio-blanco.svg") },
+            "icono_hover": { "src": get_asset_url("../images/icon-gimnasio-azul.svg") }
           }
         ]
       %}

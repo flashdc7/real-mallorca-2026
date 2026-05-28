@@ -1,0 +1,138 @@
+/* ============================================================
+   Card — Ícono + Título + Texto (módulo reutilizable)
+   ============================================================ */
+
+.card-icono-grid {
+  display: grid;
+  gap: var(--ci-gap, 16px);
+  grid-template-columns: repeat(var(--ci-cols, 3), 1fr);
+}
+
+.card-icono-item {
+  background-color: var(--ci-card-bg, transparent);
+  border: var(--ci-borde-px, 0px) solid var(--ci-borde-color, transparent);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.card-icono-item:hover {
+  background-color: var(--ci-card-bg-h, var(--primary-color));
+}
+
+/* Fila superior: ícono + título */
+.card-icono-item__top {
+  align-items: flex-start;
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+/* Contenedor del ícono con pseudo-element para opacidad del fondo */
+.card-icono-item__icon-box {
+  align-items: center;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  padding: var(--ci-icono-pad, 16px);
+  position: relative;
+  overflow: hidden;
+
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.card-icono-item__icon-box::before {
+  background-color: var(--ci-icono-bg, #F18F04);
+  content: '';
+  inset: 0;
+  opacity: var(--ci-icono-a, 1);
+  position: absolute;
+  transition: background-color 0.3s ease;
+}
+
+.card-icono-item:hover .card-icono-item__icon-box::before {
+  background-color: var(--ci-icono-bg-h, #171717);
+}
+
+.card-icono-item__icon-box img {
+  display: block;
+  height: var(--ci-icono-sz, 32px);
+  object-fit: contain;
+  position: relative;
+  width: var(--ci-icono-sz, 32px);
+  z-index: 1;
+}
+
+/* Icon Swap */
+.ci-icon-hover {
+  display: none !important;
+}
+
+.card-icono-item:hover .ci-icon-default {
+  display: none !important;
+}
+
+.card-icono-item:hover .ci-icon-hover {
+  display: block !important;
+}
+
+.card-icono-item__titulo {
+  color: var(--ci-t-color, var(--primary-color));
+  flex: 1;
+  font-size: var(--font-size-thirdheading);
+  font-weight: var(--font-weight-heading);
+  line-height: 1.2;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.card-icono-item:hover .card-icono-item__titulo {
+  color: var(--ci-t-color-h, #FFFFFF);
+}
+
+.card-icono-item__cuerpo {
+  color: var(--ci-c-color, #1F140F);
+  font-size: var(--ci-c-size, 16px);
+  font-weight: var(--font-weight-base);
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+.card-icono-item:hover .card-icono-item__cuerpo,
+.card-icono-item:hover .card-icono-item__cuerpo p {
+  color: var(--ci-c-color-h, #FFFFFF);
+}
+
+.card-icono-item__cuerpo p {
+  margin: 0;
+}
+
+/* ── Variantes de posición del ícono ──────────────────── */
+
+/* top-left: ícono encima del título como bloque */
+.ci-pos--top-left .card-icono-item__top {
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+/* top-center: ícono centrado encima */
+.ci-pos--top-center .card-icono-item__top {
+  align-items: center;
+  flex-direction: column;
+}
+
+/* inline-left (default): ya es row, no override necesario */
+
+/* ── Responsive ────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .card-icono-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
