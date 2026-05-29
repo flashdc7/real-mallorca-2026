@@ -6,11 +6,12 @@ Note: _macros.css needs to be imported into each stylesheet where macros are use
 */
 :root {
   --primary-color: #0D55BC;
-  --secondary-color: #000000;
+  --secondary-color: rgba(0,0,0,.8);
   --third-color: #ffffff;
   --accent-color: #FFEC01;
   --text-color: #000000;
-  --heading-color: #171717;
+  --heading-color: rgba(0,0,0,.8);
+  --text-color: rgba(0,0,0,.8);
   --font-family-base: 'Roboto', 'Cabin', sans-serif;
   --font-size-base: 16px;
   --font-size-disclaimer:10px;

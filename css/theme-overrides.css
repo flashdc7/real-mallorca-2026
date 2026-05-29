@@ -799,6 +799,10 @@ tfoot td {
 h2{
   font-size: var(--font-size-subheading);
   line-height: 1.25;
+  color: var(--text-color);
+}
+h3{
+  color: var(--text-color);
 }
 
 .contacto__heading-module,

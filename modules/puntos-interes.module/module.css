@@ -75,7 +75,7 @@
 .puntos-interes__number {
   font-size: 48px;
   font-weight: var(--font-weight-heading-black);
-  color: #171717;
+  color: var(--text-color);
   line-height: 1;
 }
 

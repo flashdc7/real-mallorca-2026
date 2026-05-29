@@ -57,7 +57,7 @@
 }
 
 .card-icono-item:hover .card-icono-item__icon-box::before {
-  background-color: var(--ci-icono-bg-h, #171717);
+  background-color: var(--ci-icono-bg-h, --text-color);
 }
 
 .card-icono-item__icon-box img {
