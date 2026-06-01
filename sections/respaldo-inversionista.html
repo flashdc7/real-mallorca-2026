@@ -1,0 +1,99 @@
+<!--
+  templateType: section
+  label: Prototipo – Amenidades
+  isAvailableForNewContent: true
+  description: "Sección de amenidades."
+-->
+
+{% dnd_section
+  background_color="#0D55BC",
+  padding={
+    "default": { "top": 100, "bottom": 100, "left": 20, "right": 20 },
+    "mobile":  { "top": 60, "bottom": 60, "left": 15, "right": 15 }
+  }
+%}
+
+  {% dnd_column offset=0, width=6 %}
+
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html="<h2>El respaldo de una inversión inteligente</h2><p>Con un precio de preventa desde $1,100,000, el Torino es el activo ideal para quienes buscan ver crecer su dinero.</p>",
+        extra_classes="respaldo-financiero__heading-module",
+        offset=0, width=12
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+  {% end_dnd_column %}
+  
+  
+  
+  
+  {% dnd_column offset=6, width=6 %}
+
+    {# label diferenciadores #}
+     {% dnd_row %}
+
+      {# ── Col izquierda: etiqueta, precio y richtext ── #}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        label="Overview – Contenido",
+        extra_classes="proto-overview__content-module",
+        offset=6,
+        width=5,
+        html="<p><span class='amenidades__label_transparent-module'>Diferenciadores</span></p>"
+      %}
+      {% end_dnd_module %}
+
+    {% end_dnd_row %}
+
+    {# Iconos financiamiento #}
+
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/card-icono",
+        label="Grid de Financiamientos",
+        extra_classes="icono-respaldo__cta-module",
+        cols=2,
+        gap=25,
+        card_bg_color={ "color": "#E7EEF9", "opacity": 100 },
+        card_borde_radio=24,
+        card_padding="35px",
+        icono_bg_color={ "color": "#0D55BC", "opacity": 100 },
+        icono_tamano=36,
+        icono_padding=14,
+        icono_posicion="inline-left",
+        titulo_size=22,
+        titulo_color={ "color": "#000000", "opacity": 100 },
+        cuerpo_alineacion="left",
+        cuerpo_size=14,
+        cuerpo_color={ "color": "#737491", "opacity": 100 },
+        hover_styles={
+          "card_bg_color_hover":  { "color": "#E7EEF9", "opacity": 100 },
+          "icono_bg_color_hover": { "color": "#0D55BC", "opacity": 100 },
+          "titulo_color_hover":  { "color": "#000000", "opacity": 100 },
+          "cuerpo_color_hover":  { "color": "#000000", "opacity": 100 }
+        },
+
+        items=[
+          {
+            "titulo": "Plusvalía Vinte",
+            "cuerpo": '<p>Proyectamos un crecimiento anual basado en el éxito de desarrollos previos como Real Segovia.</p>',
+            "icono": { "src": get_asset_url("../images/icon-plusvalia-blanco.svg") },
+            "icono_hover": { "src": get_asset_url("../images/icon-plusvalia-blanco.svg") }
+          },
+          {
+            "titulo": "Garantía Institucional",
+            "cuerpo": "<p>Somos una empresa que cotiza en la BMV, asegurando la entrega y calidad de tu propiedad.</p>",
+            "icono": { "src": get_asset_url("../images/icon-plusvalia-blanco.svg") },
+            "icono_hover": { "src": get_asset_url("../images/icon-plusvalia-blanco.svg") }
+          }
+        ]
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+  {% end_dnd_column %}
+
+{% end_dnd_section %}

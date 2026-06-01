@@ -803,6 +803,9 @@ tfoot td {
 .icono-financiamiento__cta-module{
   margin: 50px 0 0 0;
 }
+.icono-respaldo__cta-module{
+  margin: 20px 0 0 0;
+}
 h2{
   font-size: var(--font-size-subheading);
   line-height: 1.25;
@@ -837,6 +840,17 @@ h3{
     margin: 1.3rem 0 .2rem;
     padding: 10px 25px;
 }
+.amenidades__label_transparent-module {
+    background-color: transparent;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    border: 2px solid var(--third-color);
+    color: var(--third-color);
+    font-weight: var(--font-weight-heading-black);
+    margin: 1.3rem 0 .2rem;
+    padding: 10px 25px;
+}
 .proto-overview__content-module h3{
   margin: 0;
   color: var(--primary-color);
@@ -848,4 +862,8 @@ h3{
 .amenidades__card h3{
   color: var(--primary-color);
   margin-bottom: 20px;
+}
+.respaldo-financiero__heading-module p,
+.respaldo-financiero__heading-module h2{
+  color: var(--third-color);
 }
