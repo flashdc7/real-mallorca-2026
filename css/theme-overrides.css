@@ -793,6 +793,13 @@ tfoot td {
   justify-content: flex-end;
   height: 25em;
 }
+.dnd-module:has(.img-align-top),
+.img-align-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 25em;
+}
 .icono-financiamiento__cta-module{
   margin: 50px 0 0 0;
 }
@@ -810,4 +817,35 @@ h3{
 .contacto__desc-module,
 .contacto__desc-module p{
   color: var(--third-color);
+}
+
+.hero-prototipo__subtitulo-module,
+.hero-prototipo__subtitulo-module h3{
+  font-weight: var(--font-weight-base);
+  margin: 0 0 0 0 !important;
+}
+.hero__cta-module{
+  margin-top: 1.5em;
+}
+.amenidades__label-module {
+    background-color: #e7eef9;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    color: var(--primary-color);
+    font-weight: var(--font-weight-heading-black);
+    margin: 1.3rem 0 .2rem;
+    padding: 10px 25px;
+}
+.proto-overview__content-module h3{
+  margin: 0;
+  color: var(--primary-color);
+}
+
+.amenidades__card h3{
+  margin: 0 0 35px 0;
+}
+.amenidades__card h3{
+  color: var(--primary-color);
+  margin-bottom: 20px;
 }

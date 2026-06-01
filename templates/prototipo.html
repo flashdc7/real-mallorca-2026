@@ -1,0 +1,60 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Prototipo
+  screenshotPath: ../images/template-previews/home.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+
+{# All templates are recommended to have an h1 present for both accessibility and SEO best practice. This should be at the top of the template before any other textual content. The h1 element below is within a dnd area to allow content editors the ability to adjust the content and alignment of the text. #}
+
+{% dnd_area "dnd_area"
+  label="Main section",
+  class="body-container body-container--home"
+%}
+
+  {# Hero – Prototipo #}
+
+  {% include_dnd_partial path="../sections/hero-prototipo.html" %}
+
+  {# Comunidad #}
+    {% include_dnd_partial path="../sections/comunidad.html" %}
+
+  {# Galerias – Vive en la mejor zona #}
+
+  {% include_dnd_partial path="../sections/galeria-prototipos-dinamicos.html" %}
+
+  {# Galería de imágenes del prototipo #}
+
+  {% include_dnd_partial path="../sections/prototipos-galeria.html" %}
+
+  {# overview #}
+
+  {% include_dnd_partial path="../sections/prototipos-overview.html" %}
+
+  {# Listado amenidades #}
+
+  {% include_dnd_partial path="../sections/listado-amenidades.html" %}
+
+  {# Listado amenidades #}
+    {% include_dnd_partial path="../sections/oportunidades.html" %}
+
+  {# Ubicación #}
+  {% include_dnd_partial path="../sections/ubicacion.html" %}
+    
+    {# Financiamiento #}
+  {% include_dnd_partial path="../sections/financiamiento.html" %}
+
+  {# FAQ – Preguntas frecuentes #}
+
+  {% include_dnd_partial path="../sections/faq.html" %}
+
+  {# Contacto – Formulario #}
+
+  {% include_dnd_partial path="../sections/contacto.html" %}
+  
+
+{% end_dnd_area %}
+{% endblock body %}

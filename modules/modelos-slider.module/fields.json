@@ -1,0 +1,104 @@
+[
+  {
+    "id": "slides",
+    "name": "slides",
+    "label": "Modelos",
+    "type": "group",
+    "occurrence": { "min": 1, "max": 20, "default": 2 },
+    "children": [
+      {
+        "id": "image",
+        "name": "image",
+        "label": "Imagen",
+        "type": "image",
+        "required": true,
+        "default": {
+          "alt": "",
+          "loading": "lazy"
+        }
+      },
+      {
+        "id": "model_name",
+        "name": "model_name",
+        "label": "Nombre del Modelo",
+        "type": "text",
+        "default": "Modelo URBAN"
+      }
+    ]
+  },
+  {
+    "id": "settings",
+    "name": "settings",
+    "label": "Configuración",
+    "type": "group",
+    "children": [
+      {
+        "id": "loop",
+        "name": "loop",
+        "label": "Bucle infinito",
+        "type": "boolean",
+        "default": true
+      },
+      {
+        "id": "autoplay",
+        "name": "autoplay",
+        "label": "Reproducción automática",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "id": "autoplay_delay",
+        "name": "autoplay_delay",
+        "label": "Intervalo (ms)",
+        "type": "number",
+        "default": 4000
+      },
+      {
+        "id": "nav_position",
+        "name": "nav_position",
+        "label": "Posición de Título y Flechas",
+        "type": "choice",
+        "choices": [
+          ["bottom", "Abajo"],
+          ["top", "Arriba"]
+        ],
+        "default": "bottom"
+      }
+    ]
+  },
+  {
+    "id": "styles",
+    "name": "styles",
+    "label": "Estilos",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "id": "border_radius",
+        "name": "border_radius",
+        "label": "Radio de bordes (Individual)",
+        "type": "group",
+        "children": [
+          { "id": "tl", "name": "tl", "label": "Top Left", "type": "number", "default": 0 },
+          { "id": "tr", "name": "tr", "label": "Top Right", "type": "number", "default": 60 },
+          { "id": "bl", "name": "bl", "label": "Bottom Left", "type": "number", "default": 0 },
+          { "id": "br", "name": "br", "label": "Bottom Right", "type": "number", "default": 60 }
+        ]
+      },
+      {
+        "id": "title_color",
+        "name": "title_color",
+        "label": "Color del Título",
+        "type": "color",
+        "default": { "color": "#171717", "opacity": 100 }
+      },
+      {
+        "id": "arrow_color",
+        "name": "arrow_color",
+        "label": "Color de Flechas",
+        "type": "color",
+        "default": { "color": "#0D55BC", "opacity": 100 }
+      }
+    ]
+  }
+]

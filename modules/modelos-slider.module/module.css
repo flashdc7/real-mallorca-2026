@@ -1,0 +1,126 @@
+.modelos-slider {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.modelos-slider__viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.modelos-slider__track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  width: 100%;
+}
+
+.modelos-slider__slide {
+  flex: 0 0 100%;
+  width: 100%;
+  max-width: 100%;
+}
+
+.modelos-slider__img-wrap {
+  width: 100%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  border-top-left-radius: var(--ms-br-tl);
+  border-top-right-radius: var(--ms-br-tr);
+  border-bottom-left-radius: var(--ms-br-bl);
+  border-bottom-right-radius: var(--ms-br-br);
+}
+
+.modelos-slider__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modelos-slider__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.modelos-slider--nav-top .modelos-slider__footer {
+  margin-top: 0;
+  margin-bottom: 20px;
+  order: -1;
+}
+
+.modelos-slider--nav-top {
+  display: flex;
+  flex-direction: column;
+}
+
+.modelos-slider__title-wrap {
+  position: relative;
+  flex: 1;
+}
+
+.modelos-slider__title {
+  font-family: 'Lexend', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--ms-title-color);
+  margin: 0;
+  display: none;
+}
+
+.modelos-slider__title.is-active {
+  display: block;
+}
+
+.modelos-slider__nav {
+  display: flex;
+  gap: 12px;
+}
+
+.modelos-slider__arrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid #E0E6ED;
+  background: #FFFFFF;
+  color: var(--ms-arrow-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+.modelos-slider__arrow svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 1.5px; /* Thinner stroke as seen in the image */
+}
+
+.modelos-slider__arrow:hover {
+  background: var(--ms-arrow-color);
+  border-color: var(--ms-arrow-color);
+  color: #FFFFFF;
+  border-radius: 50%; /* Reinforced circular shape */
+  box-shadow: 0 4px 12px rgba(13, 85, 188, 0.25);
+}
+
+.modelos-slider__arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+@media (max-width: 767px) {
+  .modelos-slider__title {
+    font-size: 22px;
+  }
+  
+  .modelos-slider__arrow {
+    width: 38px;
+    height: 38px;
+  }
+}

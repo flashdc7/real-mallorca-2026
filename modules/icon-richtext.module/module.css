@@ -3,6 +3,7 @@
 .icon-rt {
   display: flex;
   gap: var(--icon-rt-gap, 16px);
+  margin-bottom: 35px;
 }
 
 /* ── Posiciones ─────────────────────────────────────────── */
@@ -61,7 +62,7 @@
   font-size: 20px;
   font-weight: 500;
   line-height: 1;
-  margin: 0px 0px 5px;
+  margin: 0px 0px 10px;
 }
 
 .icon-rt__content .icon-rt__title strong {

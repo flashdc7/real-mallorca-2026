@@ -1,0 +1,61 @@
+{# ── Modelos Slider ───────────────────────────
+   Slider de un solo slide con título y navegación.
+#}
+
+{% set slide_count = module.slides | length %}
+{% set nav_pos     = module.settings.nav_position | default("bottom") %}
+{% set br_tl       = module.styles.border_radius.tl | default(0) %}
+{% set br_tr       = module.styles.border_radius.tr | default(60) %}
+{% set br_bl       = module.styles.border_radius.bl | default(0) %}
+{% set br_br       = module.styles.border_radius.br | default(60) %}
+
+<div
+  class="modelos-slider modelos-slider--nav-{{ nav_pos }}"
+  data-modelos-slider
+  data-loop="{{ 'true' if module.settings.loop else 'false' }}"
+  data-autoplay="{{ 'true' if module.settings.autoplay else 'false' }}"
+  data-autoplay-delay="{{ module.settings.autoplay_delay | default(4000) }}"
+  style="
+    --ms-br-tl: {{ br_tl }}px;
+    --ms-br-tr: {{ br_tr }}px;
+    --ms-br-bl: {{ br_bl }}px;
+    --ms-br-br: {{ br_br }}px;
+    --ms-title-color: {{ module.styles.title_color.color }};
+    --ms-arrow-color: {{ module.styles.arrow_color.color }};
+  "
+>
+
+  <div class="modelos-slider__viewport">
+    <div class="modelos-slider__track" data-ms-track>
+      {% for slide in module.slides %}
+        <div class="modelos-slider__slide{% if loop.first %} is-active{% endif %}" data-ms-slide="{{ loop.index0 }}">
+          <div class="modelos-slider__img-wrap">
+            <img src="{{ slide.image.src }}" alt="{{ slide.image.alt }}" loading="{{ 'eager' if loop.first else 'lazy' }}">
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="modelos-slider__footer">
+    <div class="modelos-slider__title-wrap">
+      {% for slide in module.slides %}
+        <h3 class="modelos-slider__title{% if loop.first %} is-active{% endif %}" data-ms-title="{{ loop.index0 }}">
+          {{ slide.model_name }}
+        </h3>
+      {% endfor %}
+    </div>
+
+    {% if slide_count > 1 %}
+      <div class="modelos-slider__nav">
+        <button class="modelos-slider__arrow modelos-slider__arrow--prev" data-ms-prev aria-label="Anterior">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <button class="modelos-slider__arrow modelos-slider__arrow--next" data-ms-next aria-label="Siguiente">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+    {% endif %}
+  </div>
+
+</div>

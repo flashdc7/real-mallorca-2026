@@ -1,0 +1,134 @@
+<!--
+  templateType: section
+  label: Prototipo – Amenidades
+  isAvailableForNewContent: true
+  description: "Sección de amenidades."
+-->
+
+{% dnd_section
+  background_color="#ffffff",
+  vertical_alignment="top",
+  padding={
+    "default": { "top": 80, "bottom": 40 },
+    "mobile":  { "top": 50, "bottom": 50 }
+  }
+%}
+
+  {% dnd_column offset=0, width=6 %} %}
+
+    {# ── Descripción ─────────────────────────────────────────── #}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        label="EDGE – Descripción",
+        extra_classes="proto-listado__desc-module",
+        html='<h2>Tu vida se <span class="txt-azul">extiende</span> más allá de tus muros</h2>',
+        padding={
+          "default": { "bottom": 30 },
+          "mobile":  { "bottom": 30 }
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {# ── Fila 1: Alberca · Parque · Gimnasio ─────────────── #}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/icon-richtext",
+        label="Amenidad – Alberca",
+        extra_classes="amenidades__card",
+        icon={ "src": get_asset_url("../images/icon-cancha-blanco.svg"), "alt": "Cancha de Fútbol 5", "loading": "lazy" },
+        icon_position="left", icon_size=32, icon_gap=16,
+        content='<h3 class="icon-rt__title">Cancha de Fútbol 5</h3><p class="icon-rt__desc">El lugar ideal para el "match" del fin de semana y fomentar una vida social activa sin salir de tu comunidad.</p>'    
+        offset=0, width=12
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/icon-richtext",
+        label="Amenidad – Parque",
+        extra_classes="amenidades__card",
+        icon={ "src": get_asset_url("../images/icon-dog-blanco.svg"), "alt": "Dog Park", "loading": "lazy" },
+        icon_position="left", icon_size=32, icon_gap=16,
+        content='<h3 class="icon-rt__title">Dog Park</h3><p class="icon-rt__desc">Un espacio seguro y dedicado para que tu mejor amigo también disfrute de la evolución y la salud al aire libre.</p>'    
+        offset=0, width=12
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/icon-richtext",
+        label="Amenidad – Gimnasio",
+        extra_classes="amenidades__card",
+        icon={ "src": get_asset_url("../images/icon-asador-blanco.svg"), "alt": "Palapa con Asador", "loading": "lazy" },
+        icon_position="left", icon_size=32, icon_gap=16,
+        content='<h3 class="icon-rt__title">Palapa con Asador</h3><p class="icon-rt__desc">Perfecta para esas reuniones inolvidables, extendiendo tus celebraciones a un entorno diseñado para la convivencia.</p>'    
+        offset=0, width=12
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/icon-richtext",
+        label="Amenidad – Gimnasio",
+        extra_classes="amenidades__card",
+        icon={ "src": get_asset_url("../images/icon-acceso-blanco.svg"), "alt": "Acceso Controlado", "loading": "lazy" },
+        icon_position="left", icon_size=32, icon_gap=16,
+        content='<h3 class="icon-rt__title">Acceso Controlado</h3><p class="icon-rt__desc">Vive con la tranquilidad que da la seguridad 24/7, protegiendo lo que más quieres: tu familia y tu patrimonio.</p>'    
+        offset=0, width=12
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+  {% end_dnd_column %}
+
+
+  {# Galeria prototipo 2 #}
+  {% dnd_column offset=6, width=6 %}
+
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/modelos-slider",
+        label="Slider Prototipos",
+        settings={
+          "nav_position": "bottom",
+          "loop": true
+        },
+        styles={
+          "border_radius": {
+            "tl": 40,
+            "tr": 40,
+            "bl": 40,
+            "br": 40
+          }
+        },
+        slides=[
+          {
+            "model_name": "",
+            "image": {
+              "src": get_asset_url("../images/torino-modelo.png"),
+              "alt": "Modelo T"
+            }
+          },
+          {
+            "model_name": "Modelo <span class='txt-azul'>T</span>",
+            "image": {
+              "src": get_asset_url("../images/torino-modelo.png"),
+              "alt": "Modelo Torino"
+            }
+          }
+        ]
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+  {% end_dnd_column %}
+
+{% end_dnd_section %}
