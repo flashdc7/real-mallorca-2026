@@ -1,0 +1,69 @@
+[
+  {
+    "label": "Configuración Visual",
+    "name": "config",
+    "type": "group",
+    "children": [
+      {
+        "label": "Color de fondo",
+        "name": "bg_color",
+        "type": "color",
+        "default": {
+          "color": "#0D55BC",
+          "opacity": 100
+        }
+      },
+      {
+        "label": "Radio del borde (px)",
+        "name": "border_radius",
+        "type": "number",
+        "default": 30
+      },
+      {
+        "label": "Padding Vertical (px)",
+        "name": "padding_v",
+        "type": "number",
+        "default": 40
+      },
+      {
+        "label": "Padding Horizontal (px)",
+        "name": "padding_h",
+        "type": "number",
+        "default": 60
+      }
+    ]
+  },
+  {
+    "label": "Título",
+    "name": "title",
+    "type": "text",
+    "default": "Ubicación del desarrollo"
+  },
+  {
+    "label": "Puntos de interés",
+    "name": "items",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 10,
+      "default": 4
+    },
+    "children": [
+      {
+        "label": "Icono",
+        "name": "icon",
+        "type": "image",
+        "default": {
+          "src": "",
+          "alt": "icono"
+        }
+      },
+      {
+        "label": "Texto",
+        "name": "text",
+        "type": "text",
+        "default": "Transporte Público"
+      }
+    ]
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "global": false,
+  "host_template_types": [
+    "PAGE"
+  ],
+  "is_available_for_new_content": true,
+  "label": "Ubicación del Desarrollo Bar",
+  "module_id": null,
+  "content_types": [],
+  "icon": "https://static.hsappstatic.net/modules-editor-ui/static-1.1274/images/module-icons/location.svg"
+}

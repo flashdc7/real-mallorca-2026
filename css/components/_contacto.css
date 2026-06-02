@@ -19,7 +19,7 @@
 /* ── Columna izquierda ────────────────────────────────────── */
 .contacto__heading-module h2 {
   color: #ffffff;
-  font-weight: var(--font-weight-heading);
+  font-weight: var(--font-weight-heading-black);
   line-height: 1.25;
   margin: 0px 0 1.25rem;
 }

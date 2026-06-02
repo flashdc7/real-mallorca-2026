@@ -1,0 +1,26 @@
+{% set bg_color = module.config.bg_color.color %}
+{% set border_radius = module.config.border_radius %}
+{% set padding_v = module.config.padding_v %}
+{% set padding_h = module.config.padding_h %}
+
+<div class="ubicacion-desarrollo" style="background-color: {{ bg_color }}; border-radius: {{ border_radius }}px; padding: {{ padding_v }}px {{ padding_h }}px;">
+  <div class="ubicacion-desarrollo__container">
+    <div class="ubicacion-desarrollo__title">
+      <h2>{{ module.title }}</h2>
+    </div>
+    <div class="ubicacion-desarrollo__items">
+      {% for item in module.items %}
+        <div class="ubicacion-desarrollo__item">
+          {% if item.icon.src %}
+            <div class="ubicacion-desarrollo__icon">
+              <img src="{{ item.icon.src }}" alt="{{ item.icon.alt }}" width="40" height="40" loading="lazy">
+            </div>
+          {% endif %}
+          <div class="ubicacion-desarrollo__text">
+            <span>{{ item.text }}</span>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

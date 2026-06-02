@@ -1,0 +1,41 @@
+<!--
+  templateType: section
+  label: Ubicación del Desarrollo
+  isAvailableForNewContent: true
+  description: "Barra de ubicación con iconos de servicios cercanos."
+-->
+
+{% dnd_section
+  max_width=1250,
+  padding={
+    "default": { "top": 0, "bottom": 40, "left": 20, "right": 20 }
+  }
+%}
+  {% dnd_column width=12 %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/ubicacion-desarrollo",
+        title="Ubicación del desarrollo",
+        items=[
+          {
+            "text": "Transporte Público",
+            "icon": { "src": get_asset_url("../images/icon-transporte-publico-blanco.svg") }
+          },
+          {
+            "text": "Gasolinera",
+            "icon": { "src": get_asset_url("../images/icon-gasolinera-blanco.svg") }
+          },
+          {
+            "text": "Servicios de salud",
+            "icon": { "src": get_asset_url("../images/icon-servicios-de-salud.svg") }
+          },
+          {
+            "text": "Escuelas",
+            "icon": { "src": get_asset_url("../images/icon-escuelas-blanco.svg") }
+          }
+        ]
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
