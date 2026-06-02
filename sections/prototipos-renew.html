@@ -1,0 +1,69 @@
+<!--
+  templateType: section
+  label: Prototipos
+  isAvailableForNewContent: true
+  screenshotPath: ../images/section-previews/hero-banner.png
+  description: "Slider de prototipos con fondo dinámico, tarjeta y CTA."
+-->
+{% dnd_section
+  background_image={
+    "src": get_asset_url("../images/prototipos-torino-back.png"),
+    "background_position": "MIDDLE_CENTER",
+    "background_size": "cover",
+  },
+  padding={
+    "default": { "top": 70, "bottom": 0 },
+    "mobile":  { "top": 0, "bottom": 0 }
+  }
+%}
+  {% dnd_column offset=0, width=12 %}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        label="Hero – Texto con divisor",
+        extra_classes="hero__divider_torino-module",
+        html='<h2>Nuestro prototipo</h2><h3>Desde $1,100,000*</h3><p>Al elegirnos, inviertes en un diseño inteligente de dos niveles que se complementa con áreas comunes pensadas para elevar tu calidad de vida y la plusvalía de tu patrimonio.</p>'
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+
+  {% dnd_row %}
+      {% dnd_module
+        path="../modules/modelos-slider",
+        label="Slider Prototipos",
+        settings={
+          "nav_position": "bottom",
+          "loop": true
+        },
+        styles={
+          "border_radius": {
+            "tl": 40,
+            "tr": 40,
+            "bl": 40,
+            "br": 40
+          }
+        },
+        slides=[
+          {
+            "model_name": "<span class='h2'>Torino</span> <br><span class='txt-azul'>Eficiencia y diseño</span><br><span class='txt-texto'>con 52.66 m2 de construcción.</span>",
+            "image": {
+              "src": get_asset_url("../images/torino-modelo.png"),
+              "alt": "Torino"
+            }
+          },
+          {
+            "model_name": "<span class='h2'>Torino</span> <br><span class='txt-azul'>Eficiencia y diseño</span><br><span class='txt-texto'>con 52.66 m2 de construcción.</span>",
+            "image": {
+              "src": get_asset_url("../images/torino-modelo.png"),
+              "alt": "Torino"
+            }
+          }
+        ]
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    
+  {% end_dnd_column %}
+{% end_dnd_section %}

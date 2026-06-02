@@ -767,6 +767,18 @@ tfoot td {
 .txt-azul{
   color: var(--primary-color);
   }
+.amenidades__label_origen-module p{
+  width: 60%;
+  color: var(--primary-color);
+  background-color: #E7EEF9;
+  font-weight: var(--font-weight-heading-black);
+  margin: 2rem 0 .2rem 0;
+  padding: 10px 25px;
+
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
 .amenidades__label-module p{
   width: 60%;
   color: var(--primary-color);
@@ -883,4 +895,24 @@ h3{
 }
 .sub_caracteristicas__heading-module h4{
   margin-bottom: 0;
+}
+.hero__divider_torino-module{
+  text-align: center;
+}
+.hero__divider_torino-module h2{
+  margin-bottom: 10px;
+}
+.hero__divider_torino-module h3{
+  color: var(--primary-color);
+  font-size: var(--font-size-thirdheading);
+  margin-bottom: 40px;
+}
+.hero__divider_torino-module p{
+  width: 70%;
+  margin-left: 15%;
+}
+.txt-texto {
+  color: var(--text-color);
+    font-size: var(--font-size-base, 16px);
+    font-weight: var(--font-weight-base, 16px);
 }
