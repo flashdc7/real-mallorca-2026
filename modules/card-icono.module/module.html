@@ -66,31 +66,45 @@
       {% set item_bg = ci_card_bg %}
     {% endif %}
 
-    <div class="card-icono-item" style="--ci-card-bg:{{ item_bg }};--ci-borde-color:{{ borde_color }};">
+    <div class="card-icono-item ci-img--{{ item.imagen_posicion }}{% if item.imagen_con_padding %} ci-img--padded{% endif %}" style="--ci-card-bg:{{ item_bg }};--ci-borde-color:{{ borde_color }};">
 
-      {# ── Fila superior: ícono + título ── #}
-      <div class="card-icono-item__top">
-        <div class="card-icono-item__icon-box">
-          {% if item.icono.src %}
-            <img src="{{ item.icono.src }}" class="ci-icon-default" alt="" aria-hidden="true" loading="lazy">
-          {% endif %}
-          {% if item.icono_hover.src %}
-            <img src="{{ item.icono_hover.src }}" class="ci-icon-hover" alt="" aria-hidden="true" loading="lazy">
+      {% if item.imagen_opcional.src and (item.imagen_posicion == 'top' or item.imagen_posicion == 'left') %}
+        <div class="card-icono-item__image">
+          <img src="{{ item.imagen_opcional.src }}" alt="{{ item.imagen_opcional.alt }}" loading="lazy">
+        </div>
+      {% endif %}
+
+      <div class="card-icono-item__content">
+        {# ── Fila superior: ícono + título ── #}
+        <div class="card-icono-item__top">
+          <div class="card-icono-item__icon-box">
+            {% if item.icono.src %}
+              <img src="{{ item.icono.src }}" class="ci-icon-default" alt="" aria-hidden="true" loading="lazy">
+            {% endif %}
+            {% if item.icono_hover.src %}
+              <img src="{{ item.icono_hover.src }}" class="ci-icon-hover" alt="" aria-hidden="true" loading="lazy">
+            {% endif %}
+          </div>
+          {% if item.titulo %}
+            <h3 class="card-icono-item__titulo"
+                style="text-align:{{ ci_t_align }};padding:{{ ci_t_pad }};">
+              {{ item.titulo | escape_html }}
+            </h3>
           {% endif %}
         </div>
-        {% if item.titulo %}
-          <h3 class="card-icono-item__titulo"
-              style="text-align:{{ ci_t_align }};padding:{{ ci_t_pad }};">
-            {{ item.titulo | escape_html }}
-          </h3>
+
+        {# ── Richtext ── #}
+        {% if item.cuerpo %}
+          <div class="card-icono-item__cuerpo"
+               style="text-align:{{ ci_c_align }};padding:{{ ci_c_pad }};">
+            {{ item.cuerpo }}
+          </div>
         {% endif %}
       </div>
 
-      {# ── Richtext ── #}
-      {% if item.cuerpo %}
-        <div class="card-icono-item__cuerpo"
-             style="text-align:{{ ci_c_align }};padding:{{ ci_c_pad }};">
-          {{ item.cuerpo }}
+      {% if item.imagen_opcional.src and (item.imagen_posicion == 'bottom' or item.imagen_posicion == 'right') %}
+        <div class="card-icono-item__image">
+          <img src="{{ item.imagen_opcional.src }}" alt="{{ item.imagen_opcional.alt }}" loading="lazy">
         </div>
       {% endif %}
 

@@ -232,6 +232,33 @@
         "default": { "src": "", "alt": "" }
       },
       {
+        "label": "Imagen Opcional",
+        "name": "imagen_opcional",
+        "type": "image",
+        "responsive": true,
+        "resizable": true,
+        "show_loading": false,
+        "default": { "src": "", "alt": "" }
+      },
+      {
+        "label": "Posición de la imagen",
+        "name": "imagen_posicion",
+        "type": "choice",
+        "choices": [
+          ["top", "Superior"],
+          ["bottom", "Inferior"],
+          ["left", "Izquierda"],
+          ["right", "Derecha"]
+        ],
+        "default": "top"
+      },
+      {
+        "label": "Imagen con padding (igual al contenido)",
+        "name": "imagen_con_padding",
+        "type": "boolean",
+        "default": false
+      },
+      {
         "label": "Color de borde (override por item)",
         "name": "borde_color_override",
         "type": "color",
