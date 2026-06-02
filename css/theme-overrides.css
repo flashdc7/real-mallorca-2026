@@ -870,3 +870,17 @@ h3{
 .respaldo-credito__heading-module{
   text-align:center;
 }
+.caracteristicas__desc-module h4{
+  font-weight: var(--font-weight-heading-black);
+  margin-bottom: 10px;
+}
+.caracteristicas__desc-module hr{
+  width: 65%;
+  margin-right: 35%;
+}
+.sub_caracteristicas__heading-module h2{
+  margin-bottom: 10px;
+}
+.sub_caracteristicas__heading-module h4{
+  margin-bottom: 0;
+}
