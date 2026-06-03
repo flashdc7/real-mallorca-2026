@@ -59,8 +59,8 @@
 
 /* Primera línea: título destacado */
 .icon-rt__content .icon-rt__title {
-  font-size: 20px;
-  font-weight: 500;
+  font-size: var(--font-size-thirdheading);
+  font-weight: var(--font-weight-heading-black);
   line-height: 1;
   margin: 0px 0px 10px;
 }
@@ -76,4 +76,4 @@
   font-weight: 400;
   line-height: 1.1;
   margin: 0;
-}
+} 

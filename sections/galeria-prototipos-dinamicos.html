@@ -8,7 +8,7 @@
 {% dnd_section
   vertical_alignment="MIDDLE",
   padding={
-    "default": { "top": 0, "bottom": 0 },
+    "default": { "top": 0, "bottom": 70 },
     "mobile":  { "top": 40, "bottom": 40 }
   }
 %}
@@ -19,6 +19,7 @@
       {% dnd_module
         path="../modules/modelos-slider",
         label="Slider Prototipos",
+        extra_classes="slider__divider_torino-module",
         settings={
           "nav_position": "bottom",
           "loop": true
@@ -31,19 +32,18 @@
             "br": 0
           }
         },
+        model_name="",
         slides=[
           {
-            "model_name": "Modelo <span class='txt-azul'>T</span>",
             "image": {
-              "src": get_asset_url("../images/torino-modelo.png"),
-              "alt": "Modelo T"
+              "src": get_asset_url("../images/modelo-prototipo-1.png"),
+              "alt": "Torino"
             }
           },
           {
-            "model_name": "Modelo <span class='txt-azul'>T</span>",
             "image": {
               "src": get_asset_url("../images/torino-modelo.png"),
-              "alt": "Modelo Torino"
+              "alt": "Torino"
             }
           }
         ]
@@ -61,6 +61,7 @@
       {% dnd_module
         path="../modules/modelos-slider",
         label="Slider Prototipos",
+        extra_classes="slider__divider_torino-module",
         settings={
           "nav_position": "bottom",
           "loop": true
@@ -73,19 +74,18 @@
             "br": 40
           }
         },
+        model_name="",
         slides=[
           {
-            "model_name": "Modelo <span class='txt-azul'>URBAN</span>",
             "image": {
-              "src": get_asset_url("../images/torino-modelo.png"),
-              "alt": "Modelo Urban"
+              "src": get_asset_url("../images/modelo-prototipo-2.png"),
+              "alt": "Torino"
             }
           },
           {
-            "model_name": "Modelo <span class='txt-azul'>TORINO</span>",
             "image": {
               "src": get_asset_url("../images/torino-modelo.png"),
-              "alt": "Modelo Torino"
+              "alt": "Torino"
             }
           }
         ]

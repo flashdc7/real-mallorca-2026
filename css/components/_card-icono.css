@@ -137,7 +137,7 @@
 }
 
 .card-icono-item:hover .card-icono-item__titulo {
-  color: var(--ci-t-color_h, #FFFFFF);
+  color: var(--ci-t-color-h, #FFFFFF);
 }
 
 .card-icono-item__cuerpo {
