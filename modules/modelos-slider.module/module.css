@@ -79,7 +79,7 @@
   gap: 12px;
 }
 
-.modelos-slider__arrow {
+.modelos-slider__arrow{
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -101,7 +101,8 @@
   stroke-width: 1.5px; /* Thinner stroke as seen in the image */
 }
 
-.modelos-slider__arrow:hover {
+.modelos-slider__arrow:hover,
+.modelos-slider__arrow:focus  {
   background: var(--ms-arrow-color);
   border-color: var(--ms-arrow-color);
   color: #FFFFFF;

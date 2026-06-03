@@ -1,5 +1,12 @@
 [
   {
+    "id": "model_name",
+    "name": "model_name",
+    "label": "Nombre del Modelo",
+    "type": "text",
+    "default": "Modelo URBAN"
+  },
+  {
     "id": "slides",
     "name": "slides",
     "label": "Modelos",
@@ -16,13 +23,6 @@
           "alt": "",
           "loading": "lazy"
         }
-      },
-      {
-        "id": "model_name",
-        "name": "model_name",
-        "label": "Nombre del Modelo",
-        "type": "text",
-        "default": "Modelo URBAN"
       }
     ]
   },

@@ -2,26 +2,41 @@
    Slider de un solo slide con título y navegación.
 #}
 
-{% set slide_count = module.slides | length %}
-{% set nav_pos     = module.settings.nav_position | default("bottom") %}
-{% set br_tl       = module.styles.border_radius.tl | default(0) %}
-{% set br_tr       = module.styles.border_radius.tr | default(60) %}
-{% set br_bl       = module.styles.border_radius.bl | default(0) %}
-{% set br_br       = module.styles.border_radius.br | default(60) %}
+{# Conteo de slides seguro #}
+{% set slide_count = (module.slides | length) if module.slides else 0 %}
+
+{# Configuración con fallbacks seguros #}
+{% set settings    = module.settings %}
+{% set nav_pos     = settings.nav_position | default("bottom") %}
+{% set is_loop     = settings.loop if settings.loop is defined else true %}
+{% set is_autoplay = settings.autoplay if settings.autoplay is defined else false %}
+{% set auto_delay  = settings.autoplay_delay | default(4000) %}
+
+{# Estilos: Border Radius con fallbacks #}
+{% set styles      = module.styles %}
+{% set br          = styles.border_radius %}
+{% set br_tl       = br.tl | default(0) %}
+{% set br_tr       = br.tr | default(60) %}
+{% set br_bl       = br.bl | default(0) %}
+{% set br_br       = br.br | default(60) %}
+
+{# Estilos: Colores con fallbacks profundos para evitar errores de null #}
+{% set title_color = styles.title_color.color | default('#171717') %}
+{% set arrow_color = styles.arrow_color.color | default('#0D55BC') %}
 
 <div
   class="modelos-slider modelos-slider--nav-{{ nav_pos }}"
   data-modelos-slider
-  data-loop="{{ 'true' if module.settings.loop else 'false' }}"
-  data-autoplay="{{ 'true' if module.settings.autoplay else 'false' }}"
-  data-autoplay-delay="{{ module.settings.autoplay_delay | default(4000) }}"
+  data-loop="{{ 'true' if is_loop else 'false' }}"
+  data-autoplay="{{ 'true' if is_autoplay else 'false' }}"
+  data-autoplay-delay="{{ auto_delay }}"
   style="
     --ms-br-tl: {{ br_tl }}px;
     --ms-br-tr: {{ br_tr }}px;
     --ms-br-bl: {{ br_bl }}px;
     --ms-br-br: {{ br_br }}px;
-    --ms-title-color: {{ module.styles.title_color.color }};
-    --ms-arrow-color: {{ module.styles.arrow_color.color }};
+    --ms-title-color: {{ title_color }};
+    --ms-arrow-color: {{ arrow_color }};
   "
 >
 
@@ -30,7 +45,9 @@
       {% for slide in module.slides %}
         <div class="modelos-slider__slide{% if loop.first %} is-active{% endif %}" data-ms-slide="{{ loop.index0 }}">
           <div class="modelos-slider__img-wrap">
-            <img src="{{ slide.image.src }}" alt="{{ slide.image.alt }}" loading="{{ 'eager' if loop.first else 'lazy' }}">
+            {% if slide.image.src %}
+              <img src="{{ slide.image.src }}" alt="{{ slide.image.alt }}" loading="{{ 'eager' if loop.first else 'lazy' }}">
+            {% endif %}
           </div>
         </div>
       {% endfor %}
@@ -39,11 +56,9 @@
 
   <div class="modelos-slider__footer">
     <div class="modelos-slider__title-wrap">
-      {% for slide in module.slides %}
-        <h3 class="modelos-slider__title{% if loop.first %} is-active{% endif %}" data-ms-title="{{ loop.index0 }}">
-          {{ slide.model_name }}
-        </h3>
-      {% endfor %}
+      <h3 class="modelos-slider__title is-active">
+        {{ module.model_name | safe }}
+      </h3>
     </div>
 
     {% if slide_count > 1 %}

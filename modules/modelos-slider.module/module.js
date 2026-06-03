@@ -4,7 +4,6 @@
   function initModelosSlider(sliderEl) {
     var track    = sliderEl.querySelector('[data-ms-track]');
     var slides   = Array.from(sliderEl.querySelectorAll('[data-ms-slide]'));
-    var titles   = Array.from(sliderEl.querySelectorAll('[data-ms-title]'));
     var prevBtn  = sliderEl.querySelector('[data-ms-prev]');
     var nextBtn  = sliderEl.querySelector('[data-ms-next]');
 
@@ -28,11 +27,6 @@
       // Update Slides
       slides.forEach(function (slide, i) {
         slide.classList.toggle('is-active', i === currentIndex);
-      });
-
-      // Update Titles
-      titles.forEach(function (title, i) {
-        title.classList.toggle('is-active', i === currentIndex);
       });
 
       // Transform Track

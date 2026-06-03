@@ -916,3 +916,20 @@ h3{
     font-size: var(--font-size-base, 16px);
     font-weight: var(--font-weight-base, 16px);
 }
+.footer-left, .footer-right{
+  width: 50%;
+  display:block;
+  float: left;
+  text-align: left;
+}
+.footer__legal span.footer-right,
+.footer__legal span.footer-right a{
+  text-align: right;
+  color: var(--primary-color) !important;
+}
+.slider__divider_torino button:focus{
+
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}

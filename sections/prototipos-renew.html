@@ -6,11 +6,6 @@
   description: "Slider de prototipos con fondo dinámico, tarjeta y CTA."
 -->
 {% dnd_section
-  background_image={
-    "src": get_asset_url("../images/prototipos-torino-back.png"),
-    "background_position": "MIDDLE_CENTER",
-    "background_size": "cover",
-  },
   padding={
     "default": { "top": 70, "bottom": 0 },
     "mobile":  { "top": 0, "bottom": 0 }
@@ -32,6 +27,7 @@
       {% dnd_module
         path="../modules/modelos-slider",
         label="Slider Prototipos",
+        extra_classes="slider__divider_torino-module",
         settings={
           "nav_position": "bottom",
           "loop": true
@@ -44,16 +40,15 @@
             "br": 40
           }
         },
+        model_name="<span class='h2'>Torino</span> <br><span class='txt-azul'>Eficiencia y diseño</span><br><span class='txt-texto'>con 52.66 m2 de construcción.</span>",
         slides=[
           {
-            "model_name": "<span class='h2'>Torino</span> <br><span class='txt-azul'>Eficiencia y diseño</span><br><span class='txt-texto'>con 52.66 m2 de construcción.</span>",
             "image": {
-              "src": get_asset_url("../images/torino-modelo.png"),
+              "src": get_asset_url("../images/home-prototipo-torino-familiar.png"),
               "alt": "Torino"
             }
           },
           {
-            "model_name": "<span class='h2'>Torino</span> <br><span class='txt-azul'>Eficiencia y diseño</span><br><span class='txt-texto'>con 52.66 m2 de construcción.</span>",
             "image": {
               "src": get_asset_url("../images/torino-modelo.png"),
               "alt": "Torino"

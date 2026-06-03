@@ -57,12 +57,13 @@
 
 /* ── Row 2: Legal ── */
 .footer__legal{
-  border-top: 1px solid #e8ecf0;
+  /* border-top: 1px solid #e8ecf0; */
   padding-top: 14px;
   font-size: 11px;
   color: #9ca3af !important;
   line-height: 1.5;
   font-weight: 300;
+  padding-bottom: 50px;
 }
 .footer__legal span,
 .footer__legal a {
