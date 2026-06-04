@@ -8,9 +8,14 @@
 
 {% dnd_section
   background_color="#F2F2F2",
+  background_image={
+    "backgroundSize": "COVER",
+    "backgroundPosition": "TOP_CENTER",
+    "imageUrl": get_asset_url("../images/header-mallorca-prototipo-v3.jpg")
+  },
   vertical_alignment="MIDDLE",
   padding={
-    "default": { "top": 50, "bottom": 50 },
+    "default": { "top": 180, "bottom": 80 },
     "mobile":  { "top": 0, "bottom": 50 }
   }
 %}
@@ -106,29 +111,5 @@
 
   {% end_dnd_column %}
   
-  
-  {# Imagen prototipo #}
-  {% dnd_column offset=5, width=7 %}
-
-    {% dnd_row %}
-      {% dnd_module
-        path="@hubspot/image",
-        width=12,
-        label="Logo Desarrollador",
-        img={
-          "src": get_asset_url("../images/modelo-torino.png"),
-          "alt": "Torino",
-          "loading": "lazy",
-          "width": "600"
-        },
-        style_max_width={ "type": "PIXELS", "value": 560 },
-        horizontal_alignment="CENTER",
-        vertical_alignment="CENTER",
-        extra_classes="img-align-bottom"
-      %}
-      {% end_dnd_module %}
-    {% end_dnd_row %}
-
-  {% end_dnd_column %}
 
 {% end_dnd_section %}

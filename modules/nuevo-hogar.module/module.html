@@ -1,19 +1,53 @@
-<div class="nuevo-hogar" style="background-color: {{ module.design_settings.bg_color.color | default('#0D55BC') }}; color: {{ module.design_settings.text_color.color | default('#ffffff') }};">
+{# Variables de diseño con seguridad extrema #}
+{% set design    = module.design_settings %}
+{% set bg_color  = (design.bg_color.color) if design.bg_color.color else "#0D55BC" %}
+{% set txt_color = (design.text_color.color) if design.text_color.color else "#ffffff" %}
+
+{# Lógica del Countdown Inteligente #}
+{% set now   = local_dt | unixtimestamp %}
+{% set start = module.start_date | unixtimestamp if module.start_date else now %}
+{% set end   = module.end_date | unixtimestamp if module.end_date else now %}
+
+{# Milisegundos en un día #}
+{% set ms_per_day = 86400000 %}
+
+{% if now < start %}
+  {# Si aún no empezamos, mostramos el total de la duración pactada #}
+  {% set diff = end - start %}
+{% elif now >= end %}
+  {# Si ya terminó #}
+  {% set diff = 0 %}
+{% else %}
+  {# Si estamos entre inicio y fin #}
+  {% set diff = end - now %}
+{% endif %}
+
+{% set days_left = (diff / ms_per_day) | round(0, 'floor') %}
+{% set display_count = days_left if days_left > 0 else 0 %}
+
+<div class="nuevo-hogar" style="background-color: {{ bg_color }}; color: {{ txt_color }};">
   <div class="nuevo-hogar__container">
     
     <div class="nuevo-hogar__left">
-      <h2 class="nuevo-hogar__title">{{ module.heading | default('¡Tu nuevo hogar esta esperando!') }}</h2>
+      <h2 class="nuevo-hogar__title" style="color: {{ txt_color }};">
+        {{ module.titulo | default('¡Tu nuevo hogar esta esperando!') }}
+      </h2>
+      {% if module.subtitle %}
+        <p class="nuevo-hogar__subtitle h3" style="color: {{ txt_color }};">
+          {{ module.subtitle }}
+        </p>
+      {% endif %}
     </div>
 
     <div class="nuevo-hogar__center">
       <div class="nuevo-hogar__separator">
-        <img src="{{ get_asset_url('../../images/ico-medio-hogar.png') }}" alt="Separador Nuevo Hogar" class="nuevo-hogar__separator-img">
+        <img src="{{ get_asset_url('../../images/ico-medio-hogar.png') }}" alt="Separador" class="nuevo-hogar__separator-img">
       </div>
     </div>
 
     <div class="nuevo-hogar__right">
       <div class="nuevo-hogar__count-wrapper">
-        <span class="nuevo-hogar__count">{{ module.count | default('083') }}</span>
+        <span class="nuevo-hogar__count">{{ display_count }}</span>
         <span class="nuevo-hogar__unit">{{ module.unit | default('días') }}</span>
       </div>
     </div>

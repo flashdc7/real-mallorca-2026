@@ -29,6 +29,13 @@
   font-weight: var(--font-weight-heading-black);
 }
 
+.nuevo-hogar__subtitle {
+  font-size: var(--font-size-thirdheading);
+  margin: 10px 0 0;
+  opacity: 0.9;
+  font-weight: var(--font-weight-heading);
+}
+
 .nuevo-hogar__center {
   position: relative;
   width: 120px;

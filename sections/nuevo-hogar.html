@@ -2,7 +2,7 @@
   templateType: section
   label: Nuevo Hogar - Contador
   isAvailableForNewContent: true
-  description: "Sección con contador y mensaje de nuevo hogar basada en diseño personalizado."
+  description: "Sección con contador dinámico basado en fecha de inicio y entrega."
 -->
 
 {% dnd_section
@@ -17,10 +17,12 @@
   %}
     {% dnd_row %}
       {% dnd_module
-        path="../modules/nuevo-hogar.module",
+        path="../modules/nuevo-hogar",
         label="Contador Nuevo Hogar",
-        title="¡Tu nuevo hogar está esperando!",
-        count=83,
+        titulo="¡La preventa termina pronto!",
+        subtitle="Tu nuevo hogar esta esperando.",
+        start_date=1780272000000,
+        end_date=1781481600000,
         unit="días"
       %}
       {% end_dnd_module %}

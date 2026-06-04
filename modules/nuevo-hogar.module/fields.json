@@ -1,38 +1,47 @@
 [
   {
-    "name": "heading",
+    "id": "titulo",
+    "name": "titulo",
     "label": "Título",
     "type": "text",
     "default": "¡Tu nuevo hogar esta esperando!"
   },
   {
-    "name": "count",
-    "label": "Número",
+    "id": "subtitle",
+    "name": "subtitle",
+    "label": "Subtítulo",
     "type": "text",
-    "default": "083"
+    "default": ""
   },
   {
+    "id": "start_date",
+    "name": "start_date",
+    "label": "Fecha de Inicio",
+    "type": "date",
+    "default": null
+  },
+  {
+    "id": "end_date",
+    "name": "end_date",
+    "label": "Fecha de Entrega (Fin)",
+    "type": "date",
+    "default": null
+  },
+  {
+    "id": "unit",
     "name": "unit",
     "label": "Unidad",
     "type": "text",
     "default": "días"
   },
   {
-    "name": "icon",
-    "label": "Icono",
-    "type": "icon",
-    "default": {
-      "name": "clipboard",
-      "unicode": "f328",
-      "type": "fontawesome"
-    }
-  },
-  {
+    "id": "design_settings",
     "name": "design_settings",
     "label": "Ajustes de Diseño",
     "type": "group",
     "children": [
       {
+        "id": "bg_color",
         "name": "bg_color",
         "label": "Color de fondo",
         "type": "color",
@@ -42,6 +51,7 @@
         }
       },
       {
+        "id": "text_color",
         "name": "text_color",
         "label": "Color de texto",
         "type": "color",
