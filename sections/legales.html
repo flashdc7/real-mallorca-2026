@@ -1,0 +1,33 @@
+<!--
+  templateType: section
+  label: Ubicación – Real Mallorca
+  isAvailableForNewContent: true
+  screenshotPath: ../images/section-previews/ubicacion.png
+  description: "Dos columnas: izquierda con heading, intro y 3 bullets de ubicación; derecha con mapa ilustrado."
+-->
+
+{% dnd_section
+  background_color="#ffffff",
+  vertical_alignment="TOP",
+  padding={
+    "default": { "top": 0, "bottom": 10 },
+    "mobile":  { "top": 0, "bottom": 10 }
+  }
+%}
+
+  {# ── Columna: legales ──────────────────────── #}
+  {% dnd_column offset=0, width=12 %}
+
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        label="Legal – Intro",
+        extra_classes="legales__intro-module",
+        html='<p>*El precio corresponde a precio de contado. El precio de vivienda puede variar dependiendo el prototipo, tipo de financiamiento y gastos notariales.</p>'
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+  {% end_dnd_column %}
+
+{% end_dnd_section %}

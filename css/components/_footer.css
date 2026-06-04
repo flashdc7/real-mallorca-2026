@@ -66,9 +66,18 @@
   padding-bottom: 50px;
 }
 .footer__legal span,
-.footer__legal a {
-  
+.footer__legal a,
+.legales__intro-module p{
   color: #9ca3af !important;
+}
+.legales__intro-module p{
+  /* border-top: 1px solid #e8ecf0; */
+  padding-top: 0px;
+  font-size: 11px;
+  color: #9ca3af !important;
+  line-height: 1.5;
+  font-weight: 300;
+  padding-bottom: 0px;
 }
 
 /* ── Responsive ── */
