@@ -933,3 +933,30 @@ h3{
   -moz-border-radius: 50%;
   border-radius: 50%;
 }
+
+.widget-type-cell .row-fluid-wrapper.row-depth-1.row-number-1.dnd_area-dnd_partial-1-row-0-padding {
+    background-color: var(--primary-color) !important;
+    padding-top: 120px !important;
+}
+
+@media(min-width: 768px) and (max-width: 1080px){
+  .dnd_area-dnd_partial-1-row-0-background-layers{
+    background-position: left top !important;
+  }
+
+}
+@media(max-width: 767px){
+  .footer-left, .footer-right,
+  .footer__legal span.footer-right, .footer__legal span.footer-right a{
+    width: 100%;
+    display:block;
+    float: left;
+    text-align: left;
+  }
+  .footer__legal span.footer-right, .footer__legal span.footer-right a{
+    margin: 20px 0 35px;
+  }
+
+}
+
+

@@ -68,9 +68,11 @@
 }
 
 @media (max-width: 767px) {
+  .comunidad-gallery{ margin: 0 auto !important; }
   .comunidad-gallery__grid {
     flex-wrap: wrap;
     gap: 15px;
+    padding-bottom: 0px;
   }
 
   .comunidad-gallery__item {

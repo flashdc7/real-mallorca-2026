@@ -77,3 +77,15 @@
   line-height: 1.1;
   margin: 0;
 } 
+
+@media(min-width: 768px) and (max-width: 1080px){
+  .icon-rt {
+    margin-bottom: 0px;
+  }
+}
+
+@media(max-width: 767px){
+  .icon-rt {
+    margin-bottom: 0px;
+  }
+}
