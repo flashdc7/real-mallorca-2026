@@ -139,6 +139,11 @@ strong, b {
   font-weight: var(--font-weight-heading);
   line-height: 1.1;
 }
+.amenidades__heading-module h3{
+  font-size: var(--font-size-thirdheading);
+  font-weight: var(--font-weight-thin);
+  margin: 0 0 .3rem;
+}
 .body-container--home .form-title,
 .body-container--home.submitted-message,
 .body-container--home form,

@@ -8,7 +8,8 @@
   position: relative;
 }
 
-.dnd-section:has(.contacto__heading-module) .row-fluid {
+.dnd-section:has(.contacto__heading-module) .row-fluid,
+.dnd-section:has(.contacto__heading_prototipo-module) .row-fluid {
   position: relative;
   z-index: 1;
 }
@@ -17,7 +18,7 @@
     border: none !important;
 }
 /* ── Columna izquierda ────────────────────────────────────── */
-.contacto__heading-module h2 {
+.contacto__heading-module h2, .contacto__heading_prototipo-module h2 {
   color: #ffffff;
   font-weight: var(--font-weight-heading-black);
   line-height: 1.25;

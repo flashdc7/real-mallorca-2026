@@ -15,7 +15,7 @@
   background_color="#0D55BC",
   background_image={
     "backgroundSize": "COVER",
-    "backgroundPosition": "TOP_LEFT",
+    "backgroundPosition": "BOTTOM_LEFT",
     "imageUrl": get_asset_url("../images/header-mallorca-v5.png")
   },
   vertical_alignment="MIDDLE",
@@ -126,6 +126,17 @@
             }
           }
         }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+    {# legales #}
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        label="Hero – legales",
+        extra_classes="legales__intro_blanco-module",
+        html='<p>*El precio corresponde a precio de contado. El precio de vivienda puede variar dependiendo el prototipo, tipo de financiamiento y gastos notariales.</p>'
       %}
       {% end_dnd_module %}
     {% end_dnd_row %}

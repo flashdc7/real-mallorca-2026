@@ -56,7 +56,7 @@
 }
 
 /* ── Row 2: Legal ── */
-.footer__legal{
+.footer__legal, .legales__intro_blanco-module p, .legales__intro_blanco2-module{
   /* border-top: 1px solid #e8ecf0; */
   padding-top: 14px;
   font-size: 11px;
@@ -70,6 +70,13 @@
 .legales__intro-module p{
   color: #9ca3af !important;
 }
+.legales__intro_blanco2-module{
+  color: #86AADD !important;
+}
+.legales__intro_blanco-module p{
+  color: #86AADD !important;
+  margin: 50px 0 0;
+}
 .legales__intro-module p{
   /* border-top: 1px solid #e8ecf0; */
   padding-top: 0px;
@@ -78,6 +85,9 @@
   line-height: 1.5;
   font-weight: 300;
   padding-bottom: 0px;
+}
+.hero__divider_torino-module p{
+  margin: 0 0 20px;
 }
 
 /* ── Responsive ── */

@@ -764,11 +764,17 @@ tfoot td {
 .amenidades__icon-module strong{
   color: var(--primary-color);
 }
+.amenidades__icon-module h4{
+  font-weight: var(--font-weight-thin);
+}
+.amenidades__icon-module h4 strong{
+  font-weight: var(--font-weight-heading);
+}
 .txt-azul{
   color: var(--primary-color);
   }
 .amenidades__label_origen-module p{
-  width: 60%;
+  width: 65%;
   color: var(--primary-color);
   background-color: #E7EEF9;
   font-weight: var(--font-weight-heading-black);
@@ -829,11 +835,16 @@ h3{
 
 .contacto__heading-module,
 .contacto__heading-module h2,
+.contacto__heading_prototipo-module,
+.contacto__heading_prototipo-module h2,
 .contacto__desc-module,
 .contacto__desc-module p{
   color: var(--third-color);
 }
 
+.contacto__heading_prototipo-module h2{
+  font-size: var(--font-size-subheading);
+}
 .hero-prototipo__subtitulo-module,
 .hero-prototipo__subtitulo-module h3{
   font-weight: var(--font-weight-base);
@@ -937,6 +948,12 @@ h3{
 .widget-type-cell .row-fluid-wrapper.row-depth-1.row-number-1.dnd_area-dnd_partial-1-row-0-padding {
     background-color: var(--primary-color) !important;
     padding-top: 120px !important;
+}
+.txt-atencion, .footer__address{
+  font-size: 15px;
+}
+.txt-500{
+  font-weight: var(--font-weight-heading)
 }
 
 @media(min-width: 768px) and (max-width: 1080px){
