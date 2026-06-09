@@ -901,6 +901,9 @@ h3{
   width: 65%;
   margin-right: 35%;
 }
+.caracteristicas__desc-module li{
+  margin-bottom: 10px;
+}
 .sub_caracteristicas__heading-module h2{
   margin-bottom: 10px;
 }
@@ -954,6 +957,9 @@ h3{
 }
 .txt-500{
   font-weight: var(--font-weight-heading)
+}
+.header__cta .button:hover{
+  background-color: rgba(0, 5, 108, 1);
 }
 
 @media(min-width: 768px) and (max-width: 1080px){

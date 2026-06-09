@@ -18,15 +18,18 @@
 
     {% dnd_row %}
       {% dnd_module
-        path="../modules/image-slider",
-        loop=true,
-        autoplay=false,
-        autoplay_delay=4000,
-        extra_classes="amenidades__slider-module",
-        offset=0, width=12
+        path="@hubspot/linked_image",
+        img={
+          "alt": context.column_one_image_alt or "Espacios Mallorca",
+          "loading": context.column_one_image_loading or "lazy",
+          "max_height": context.column_one_image_height or 451,
+          "max_width": context.column_one_image_width or 605,
+          "size_type": "auto_custom_max",
+          "src": context.column_one_image or get_asset_url("../images/espacios-mallorca-0.jpg")
+        }
       %}
       {% end_dnd_module %}
-    {% end_dnd_row %}
+    {% end_dnd_row %} 
 
     {# Botón CTA – nativo del tema (button.module) #}
     {% dnd_row %}
@@ -37,7 +40,7 @@
         button_text="Cotiza Ahora",
         link={
           "url": {
-            "href": "#prototipos",
+            "href": "#contacto",
             "type": "EXTERNAL"
           },
           "open_in_new_tab": false,

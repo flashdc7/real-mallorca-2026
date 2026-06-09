@@ -19,7 +19,7 @@
   height: var(--ig-size, 56px);
   padding: var(--ig-padding, 14px);
   border-radius: var(--ig-radius, 8px);
-  background-color: var(--ig-bg, #CBD527);
+  background-color: var(--ig-bg, #0D55BC);
   flex-shrink: 0;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }

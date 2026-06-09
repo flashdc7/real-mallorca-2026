@@ -25,6 +25,13 @@
 {% set days_left = (diff / ms_per_day) | round(0, 'floor') %}
 {% set display_count = days_left if days_left > 0 else 0 %}
 
+{# Forzar visualización de 3 dígitos (ej: 005, 024, 123) #}
+{% if display_count < 10 %}
+  {% set display_count = "00" ~ display_count %}
+{% elif display_count < 100 %}
+  {% set display_count = "0" ~ display_count %}
+{% endif %}
+
 <div class="nuevo-hogar" style="background-color: {{ bg_color }}; color: {{ txt_color }};">
   <div class="nuevo-hogar__container">
     
@@ -46,6 +53,7 @@
     </div>
 
     <div class="nuevo-hogar__right">
+      <p class="nuevo-hogar__titulo_preventa">Faltan</p>
       <div class="nuevo-hogar__count-wrapper">
         <span class="nuevo-hogar__count">{{ display_count }}</span>
         <span class="nuevo-hogar__unit">{{ module.unit | default('días') }}</span>

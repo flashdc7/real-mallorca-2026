@@ -1,0 +1,31 @@
+<!--
+  templateType: section
+  label: DIV – Real Mallorca
+  isAvailableForNewContent: true
+  screenshotPath: ../images/section-previews/contacto.png
+  description: "Div blanco para contacto"
+-->
+
+{% dnd_section
+  padding={
+    "default": { "top": 0, "bottom": 0 },
+    "mobile":  { "top": 0, "bottom": 0 }
+  }
+%}
+
+  {# ── Columna izquierda: heading + descripción + íconos ──── #}
+  {% dnd_column widt=12 %}
+
+    {% dnd_row %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        label="Div – Contacto",
+        extra_classes="div__contact-module",
+        html='<p id="contacto">&nbsp;</p>'
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+
+  {% end_dnd_column %}
+
+{% end_dnd_section %}
